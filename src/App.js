@@ -1,9 +1,19 @@
 import './scss/index.scss';
+import { Header } from './components/Header';
+import { Intro } from './components/Intro';
+import { Title } from './components/Title';
+import { SelectSend } from './components/SelectSend';
+import { Steps } from './components/Steps';
 
 function App() {
   return (
     <div className="App">
-      <div className="proverka">ну здарова</div>
+      <Header />
+      <Intro />
+      <Title text={'Пользуйтесь лучшими сервисами вместе с нами'} />
+      <SelectSend />
+      <Title text={'15 минут и рассылка готова'} />
+      <Steps />
     </div>
   );
 }

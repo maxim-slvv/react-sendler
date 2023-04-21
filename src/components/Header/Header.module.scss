@@ -1,0 +1,70 @@
+$space-r: 0px 10px 0px 0px;
+$space-l: 0px 0px 0px 10px;
+
+.header {
+  background-color: #343642; // blue-dark
+  height: 72px;
+  -webkit-user-select: none; /* запретить выделение для webkit браузеров */
+  -moz-user-select: none; /* запретить выделение для Firefox */
+  -ms-user-select: none; /* запретить выделение для IE */
+  user-select: none; /* запретить выделение для остальных браузеров */
+  label {
+    font-size: 20px;
+    margin: $space-l;
+    color: white;
+    transition: hover ease-in 0.5s;
+    &:hover {
+      cursor: pointer;
+      border-bottom: 1px solid white;
+    }
+  }
+}
+.box {
+  display: flex;
+  align-items: center;
+  height: 70px;
+}
+
+.user_name {
+  flex: 1 0 auto;
+}
+
+.logo {
+  padding-top: 8px;
+}
+
+.link {
+  span {
+    background-color: #5175a8;
+    padding: 8px 16px;
+    border-radius: 10px;
+    color: #eff2f2;
+    cursor: pointer;
+    &:hover {
+      background-color: lighten(#5175a8, 5%);
+    }
+    &:active {
+      background-color: darken(#5175a8, 5%);
+    }
+    margin: $space-l;
+  }
+}
+
+.drop_menu {
+  display: flex;
+  position: relative;
+  span {
+    background-color: #5175a8;
+    padding: 8px 16px;
+    border-radius: 10px;
+    color: #eff2f2;
+    cursor: pointer;
+    &:hover {
+      background-color: lighten(#5175a8, 5%);
+    }
+    &:active {
+      background-color: darken(#5175a8, 5%);
+    }
+    margin: $space-l;
+  }
+}
