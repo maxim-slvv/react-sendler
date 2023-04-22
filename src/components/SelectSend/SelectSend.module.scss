@@ -14,6 +14,8 @@ $margin-top: 15px;
   font-size: 25px;
   img {
     margin-top: $margin-top;
+    height: 128px;
+    width: 128px;
   }
   p {
     margin-top: $margin-top;
@@ -24,4 +26,7 @@ $margin-top: 15px;
   button {
     margin-top: $margin-top;
   }
+}
+.whatsapp {
+  border-radius: 50%;
 }

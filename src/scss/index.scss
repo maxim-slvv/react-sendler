@@ -1,16 +1,18 @@
 @import './variables.scss';
 @import './normalize.scss';
 @import './hoverCard.scss';
+@import './reCall.scss';
+@import './socialLinks.scss';
 /*--------------------*/
 
 body {
-  height: 2000px;
+  height: 3000px;
 }
 
 [class*='__container'] {
   max-width: 1240px;
   margin: 0 auto;
-  //   border: 1px solid rgb(255, 89, 0);
+  // border: 1px solid rgb(255, 89, 0);
 }
 
 .hidden {

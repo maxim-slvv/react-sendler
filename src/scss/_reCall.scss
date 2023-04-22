@@ -1,0 +1,113 @@
+.testimonial {
+  transition: all 0.5s ease-out;
+  background-color: #fff;
+  border-radius: 20px;
+  //   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  overflow: hidden;
+  max-width: 100%;
+  width: 350px; /* default 400px */
+  border-radius: 15px;
+  border: 1px solid #5175a8;
+  background-color: #f2f7ff;
+  //   #f2f7ff
+  &:hover {
+    cursor: pointer;
+    p {
+      transition: all 0.3s ease-out;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    h3 {
+      transition: all 0.3s ease-out;
+      color: #ffffff;
+    }
+  }
+  &:hover {
+    .testimonial-footer {
+      transition: all ease-in-out 0.5s;
+      transform: translateY(10%);
+    }
+  }
+}
+
+.testimonial-body {
+  padding: 40px 40px 80px;
+  position: relative;
+  z-index: 0;
+  background-color: #f2f7ff;
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -30px;
+    right: -30px;
+    background: #5175a8;
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: transform 0.25s ease-out;
+  }
+  &:hover:before {
+    transform: scale(35);
+  }
+}
+
+.testimonial-body p {
+  color: #555;
+  font-size: 20px;
+  line-height: 36px;
+  margin: 0;
+  height: 200px;
+
+  text-overflow: ellipsis;
+}
+
+.testimonial-body .fa-quote-right {
+  color: #eee;
+  font-size: 40px;
+  float: right;
+}
+
+.testimonial-footer {
+  position: relative;
+  z-index: 2;
+  background-color: #5175a8;
+  color: #fff;
+  padding: 30px; /* default 40px*/
+  text-align: center;
+  border-radius: 15px;
+  height: 170px;
+}
+
+.testimonial-footer img {
+  border-radius: 50%;
+  border: 5px solid #fff;
+  height: 100px; /* default 120px */
+  width: 100px; /* default 120px */
+  margin-top: -80px; /* default -100px */
+  &:hover {
+    transition: all ease-in-out 0.5s;
+    transform: translateY(-5%);
+  }
+}
+
+.testimonial-footer h3 {
+  margin: 10px 0;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+.testimonial-footer h4 {
+  font-weight: 400;
+  font-size: 14px;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.testimonial-quote {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
