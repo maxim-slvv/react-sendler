@@ -4,6 +4,7 @@ import { Intro } from './components/Intro';
 import { Title } from './components/Title';
 import { SelectSend } from './components/SelectSend';
 import { Steps } from './components/Steps';
+import { HoverCard } from './components/HoverCard';
 
 function App() {
   return (

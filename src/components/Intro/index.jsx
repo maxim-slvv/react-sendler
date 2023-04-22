@@ -1,6 +1,51 @@
 import React from 'react';
-
 import style from './Intro.module.scss';
+
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+import { Bar } from 'react-chartjs-2';
+import { faker } from '@faker-js/faker';
+
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+
+export const options = {
+  maintainAspectRatio: false,
+  responsive: true,
+  plugins: {
+    legend: {
+      display: false,
+    },
+    title: {
+      display: false,
+    },
+  },
+};
+
+const labels = ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'];
+
+export const data = {
+  labels,
+  datasets: [
+    {
+      label: 'Dataset 1',
+      data: labels.map(() => faker.datatype.number({ min: 300, max: 1500 })),
+      backgroundColor: '#5175a8',
+    },
+    {
+      label: 'Dataset 2',
+
+      data: labels.map(() => faker.datatype.number({ min: 800, max: 2000 })),
+      backgroundColor: '#cb5656',
+    },
+  ],
+};
 
 export const Intro = () => {
   return (
@@ -15,7 +60,7 @@ export const Intro = () => {
           </div>
         </div>
         <div className="chart">
-          |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+          <Bar options={options} data={data} width={620} height={332} />
         </div>
       </div>
     </div>
