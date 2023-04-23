@@ -12,6 +12,7 @@ export const HoverCard = ({ name, text, number }) => {
         <div class="card1">
           <h3>{name}</h3>
           <p class="small">{text}</p>
+          <span></span>
           <div className={style.image}>
             <img
               src={

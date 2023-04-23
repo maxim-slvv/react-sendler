@@ -17,8 +17,8 @@ export const Header = () => {
           <div className={style.logo}>
             <img src={logo} alt="" />
           </div>
-          <div className={style.user_name}>
-            <label>UserName</label>
+          <div className={style.link}>
+            <span>UserName</span>
           </div>
           <div onClick={() => Hover()} className={style.drop_menu}>
             <span>Возможности</span>

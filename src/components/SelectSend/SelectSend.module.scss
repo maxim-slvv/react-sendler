@@ -4,11 +4,12 @@ $margin-top: 15px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: -50px;
-  margin-bottom: -30px;
-  //   background-color: #505260;
+  // margin-top: -50px;
+  // margin-bottom: -30px;
+  // background-color: #505260;
 }
 .item {
+  // transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,12 +20,20 @@ $margin-top: 15px;
     height: 128px;
     width: 128px;
   }
+
   p {
+    display: flex;
     margin-top: $margin-top;
+    text-align: center;
   }
   label {
+    display: flex;
     font-weight: 700;
   }
+  span {
+    margin-left: 10px;
+  }
+
   button {
     margin-top: $margin-top;
   }

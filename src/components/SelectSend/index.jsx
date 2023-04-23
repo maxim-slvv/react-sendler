@@ -13,7 +13,8 @@ export const SelectSend = () => {
           <div className={style.item}>
             <img src={mail} alt="" />
             <p>
-              <label>Email</label> Рассылка
+              <label>Email</label>
+              <span>Рассылка</span>
             </p>
             <button className="red__button">Начать бесплатно</button>
           </div>
@@ -22,7 +23,8 @@ export const SelectSend = () => {
           <div className={style.item}>
             <img className={style.whatsapp} src={whatsApp} alt="" />
             <p>
-              <label>WhatsApp</label> Рассылка
+              <label>WhatsApp</label>
+              <span>Рассылка</span>
             </p>
             <button className="red__button">Начать бесплатно</button>
           </div>

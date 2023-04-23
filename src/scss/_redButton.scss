@@ -1,0 +1,17 @@
+.red__button {
+  font-size: 15px;
+  font-weight: 700;
+  border: 1px solid darken(#d76666, 5%);
+  color: white;
+  background-color: #cb5656;
+  border-radius: 30px;
+  height: 46px;
+  padding: 0px 20px;
+  cursor: pointer;
+  &:hover {
+    background-color: darken(#cb5656, 5%);
+  }
+  &:active {
+    background-color: lighten(#cb5656, 1%);
+  }
+}

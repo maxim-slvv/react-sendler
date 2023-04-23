@@ -1,15 +1,17 @@
-@import './variables.scss';
-@import './normalize.scss';
-@import './hoverCard.scss';
-@import './reCall.scss';
-@import './socialLinks.scss';
+@import './_variables.scss';
+@import './_normalize.scss';
+@import './_hoverCard.scss';
+@import './_reCall.scss';
+@import './_socialLinks.scss';
+@import './_redButton.scss';
 /*--------------------*/
 
 body {
+  background-color: $border-color; //такой же цвет бордюр
 }
 
 .background {
-  background-color: #006363;
+  background-color: darken(#5175a8, 5%);
 }
 
 [class*='__container'] {
@@ -20,20 +22,4 @@ body {
 
 .hidden {
   display: none;
-}
-
-.red__button {
-  border: 1px solid darken(#d76666, 5%);
-  color: white;
-  background-color: #cb5656;
-  border-radius: 30px;
-  height: 46px;
-  padding: 0px 20px;
-  cursor: pointer;
-  &:hover {
-    background-color: darken(#cb5656, 5%);
-  }
-  &:active {
-    background-color: lighten(#cb5656, 1%);
-  }
 }
