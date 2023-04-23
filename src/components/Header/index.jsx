@@ -1,7 +1,7 @@
 import React from 'react';
 //TODO сделать на mouseenter
 // import { DropMenu } from '../HomeComponents/DropMenu/index';
-import logo from '../../assets/img/logo.svg';
+import logo from '../../assets/img/home/logo.svg';
 import style from './Header.module.scss';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -26,7 +26,7 @@ export const Header = () => {
           </div>
 
           <div className={style.link}>
-            <Link to="/my">
+            <Link to="/dashboard">
               <span>UserName</span>
             </Link>
           </div>

@@ -1,5 +1,5 @@
 import { Accordion, AccordionItem as Item } from '@szhsin/react-accordion';
-import chevronDown from '../../../assets/img/chevron-down.svg';
+import chevronDown from '../../../assets/img/home/chevron-down.svg';
 import './style.scss';
 
 const AccordionItem = ({ header, ...rest }) => (

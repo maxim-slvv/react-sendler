@@ -1,9 +1,9 @@
 import React from 'react';
 import style from './HoverCard.module.scss';
 
-import registration from '../../../assets/img/registration.svg';
-import settings from '../../../assets/img/settings.svg';
-import complete from '../../../assets/img/complete.svg';
+import registration from '../../../assets/img/home/registration.svg';
+import settings from '../../../assets/img/home/settings.svg';
+import complete from '../../../assets/img/home/complete.svg';
 
 export const HoverCard = ({ name, text, number }) => {
   return (

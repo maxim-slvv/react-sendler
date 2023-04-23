@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Intro } from '../components/HomeComponents/Intro';
-import { Title } from '../components/Title';
+import { Title } from '../components/HomeComponents/Title';
 import { SelectSend } from '../components/HomeComponents/SelectSend';
 import { Steps } from '../components/HomeComponents/Steps';
 import { ReCall } from '../components/HomeComponents/ReCall';

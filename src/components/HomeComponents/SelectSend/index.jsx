@@ -2,8 +2,8 @@ import React from 'react';
 
 import style from './SelectSend.module.scss';
 
-import mail from '../../../assets/img/mail.png';
-import whatsApp from '../../../assets/img/whatsApp.png';
+import mail from '../../../assets/img/home/mail.png';
+import whatsApp from '../../../assets/img/home/whatsApp.png';
 
 export const SelectSend = () => {
   return (
