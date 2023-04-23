@@ -1,7 +1,6 @@
 import style from './DropMenu.module.scss';
 
-export function DropMenu({ props }) {
-  console.log(props);
+export const DropMenu = ({ props }) => {
   return (
     <div className={style.container}>
       <ul className={style.box}>
@@ -11,4 +10,4 @@ export function DropMenu({ props }) {
       </ul>
     </div>
   );
-}
+};

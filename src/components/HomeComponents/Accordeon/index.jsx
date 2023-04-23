@@ -1,12 +1,18 @@
-import {
-  Accordion,
-  AccordionItem,
-  useAccordion,
-  useAccordionProvider,
-  AccordionProvider,
-} from '@szhsin/react-accordion';
+import { Accordion, AccordionItem as Item } from '@szhsin/react-accordion';
+import chevronDown from '../../../assets/img/chevron-down.svg';
+import './style.scss';
 
-import styles from './Accordeon.module.scss';
+const AccordionItem = ({ header, ...rest }) => (
+  <Item
+    {...rest}
+    header={
+      <>
+        {header}
+        <img className="chevron-down" src={chevronDown} alt="Chevron Down" />
+      </>
+    }
+  />
+);
 
 const faq = [
   {
@@ -27,22 +33,18 @@ const faq = [
   },
 ];
 
-export default function Accordeon() {
+export const Accordeon = () => {
   return (
-    <div className="__container">
-      <div className={styles.box}>
-        <Accordion transition transitionTimeout={200}>
-          {faq.map((e) => {
-            return (
-              <AccordionItem
-                className={styles.header}
-                header={<h3 className={styles.title}>{e.title}</h3>}>
-                <p>{e.text}</p>
-              </AccordionItem>
-            );
-          })}
-        </Accordion>
-      </div>
+    <div className="App">
+      <Accordion transition transitionTimeout={200}>
+        {faq.map((e) => {
+          return (
+            <AccordionItem header={e.title} initialEntered>
+              {e.text}
+            </AccordionItem>
+          );
+        })}
+      </Accordion>
     </div>
   );
-}
+};

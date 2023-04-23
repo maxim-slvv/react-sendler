@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { Intro } from '../components/Intro';
+import { Intro } from '../components/HomeComponents/Intro';
 import { Title } from '../components/Title';
-import { SelectSend } from '../components/SelectSend';
-import { Steps } from '../components/Steps';
-import { ReCall } from '../components/ReCall';
-import { Test } from '../components/Accordeon/text';
+import { SelectSend } from '../components/HomeComponents/SelectSend';
+import { Steps } from '../components/HomeComponents/Steps';
+import { ReCall } from '../components/HomeComponents/ReCall';
+import { Accordeon } from '../components/HomeComponents/Accordeon';
 
-export const Home = () => {
+const Home = () => {
   return (
     <div>
       <Intro />
@@ -18,8 +18,9 @@ export const Home = () => {
       <Title text={'Отзывы наших пользователей'} />
       <ReCall />
       <Title text={'FAQ'} />
-      <Test />
+      <Accordeon />
       <Title text={'Регистрируйтесь сейчас и получайте бонус'} />
     </div>
   );
 };
+export default Home;

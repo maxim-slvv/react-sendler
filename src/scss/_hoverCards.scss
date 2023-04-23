@@ -6,7 +6,6 @@ $background-radius: 15px;
   transition: all 0.3s ease-out;
   flex: 1 0 auto;
   display: flex;
-
   align-items: center;
   justify-content: center;
   h3 {
@@ -17,7 +16,6 @@ $background-radius: 15px;
     margin-bottom: 4px;
     text-align: center;
   }
-
   p {
     display: flex;
     flex-direction: column;
@@ -37,7 +35,6 @@ $background-radius: 15px;
     padding-bottom: 10px;
     border-bottom: 1px solid rgb(197, 197, 197);
   }
-
   margin-right: 10px;
 }
 
@@ -96,7 +93,6 @@ $background-radius: 15px;
     transition: transform 0.25s ease-out;
   }
   p {
-    // background-color: red;
     min-height: 60px; //высота текста
   }
 

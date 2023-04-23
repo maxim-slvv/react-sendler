@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { HoverCard } from '../HoverCard/index';
+import { HoverCard } from '../../HomeComponents/HoverCard/index';
 
 import style from './Steps.module.scss';
 

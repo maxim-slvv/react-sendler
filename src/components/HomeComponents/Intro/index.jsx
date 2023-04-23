@@ -34,11 +34,11 @@ export const data = {
   labels,
   datasets: [
     {
-      data: labels.map(() => faker.datatype.number({ min: 300, max: 1500 })),
+      data: labels.map(() => faker.datatype.number({ min: 800, max: 1500 })),
       backgroundColor: '#5175a8',
     },
     {
-      data: labels.map(() => faker.datatype.number({ min: 800, max: 2000 })),
+      data: labels.map(() => faker.datatype.number({ min: 1200, max: 2000 })),
       backgroundColor: '#cb5656',
     },
   ],
