@@ -34,13 +34,10 @@ export const data = {
   labels,
   datasets: [
     {
-      label: 'Dataset 1',
       data: labels.map(() => faker.datatype.number({ min: 300, max: 1500 })),
       backgroundColor: '#5175a8',
     },
     {
-      label: 'Dataset 2',
-
       data: labels.map(() => faker.datatype.number({ min: 800, max: 2000 })),
       backgroundColor: '#cb5656',
     },
@@ -49,18 +46,20 @@ export const data = {
 
 export const Intro = () => {
   return (
-    <div className="__container">
-      <div className={style.box}>
-        <div className={style.info}>
-          <h1>Email рассылки для вашего бизнеса</h1>
-          <p>Отправляйте красивые письма и привлекайте больше постоянных клиентов</p>
-          <div className={style.action}>
-            <input type="mail" placeholder="Введите Email" />
-            <button className="red__button">Начать бесплатно</button>
+    <div className="background">
+      <div className="__container">
+        <div className={style.box}>
+          <div className={style.info}>
+            <h1>Email рассылки для вашего бизнеса</h1>
+            <p>Отправляйте красивые письма и привлекайте больше постоянных клиентов</p>
+            <div className={style.action}>
+              <input type="mail" placeholder="Введите Email" />
+              <button className="red__button">Начать бесплатно</button>
+            </div>
           </div>
-        </div>
-        <div className="chart">
-          <Bar options={options} data={data} width={620} height={332} />
+          <div className={style.chart}>
+            <Bar options={options} data={data} width={620} height={332} />
+          </div>
         </div>
       </div>
     </div>

@@ -1,0 +1,33 @@
+.footer {
+  background-color: #343642;
+  color: white;
+  padding: 30px 0px;
+}
+
+.left {
+  //   border: 1px dashed red;
+  width: 420px;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+  }
+  li {
+    width: fit-content;
+    border-bottom: 1px solid #343642;
+    transition: transform 0.2s ease-in-out;
+  }
+  li:hover {
+    transition: transform 0.2s ease-in-out;
+    border-bottom: 1px solid white;
+    transform: translateX(5px);
+    cursor: pointer;
+  }
+  span {
+    color: inherit;
+  }
+}
+
+.right {
+}
