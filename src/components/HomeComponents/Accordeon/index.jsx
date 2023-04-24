@@ -39,7 +39,8 @@ export const Accordeon = () => {
       <Accordion transition transitionTimeout={200}>
         {faq.map((e) => {
           return (
-            <AccordionItem header={e.title} initialEntered>
+            <AccordionItem header={e.title}>
+              {/* этот атрибут был выше, удалил его initialEntered */}
               {e.text}
             </AccordionItem>
           );

@@ -1,12 +1,43 @@
 @import './_variables.scss';
 @import './_normalize.scss';
 @import './_hoverCards.scss';
-@import './_reCall.scss';
 @import './_redButton.scss';
 /*--------------------*/
 
 body {
-  background-color: $border-color; //такой же цвет бордюр
+  overflow-x: hidden;
+  background-color: $border-color;
+  @media (max-width: 1700px) {
+    zoom: 90%;
+  }
+  @media (max-width: 1505px) {
+    zoom: 70%;
+  }
+
+  @media (max-width: 1300px) {
+    zoom: 60%;
+  }
+  @media (max-width: 1020px) {
+    zoom: 50%;
+  }
+  @media (max-width: 900px) {
+    zoom: 40%;
+  }
+  @media (max-width: 700px) {
+    zoom: 35%;
+  }
+  @media (max-width: 600px) {
+    zoom: 32%;
+  }
+  @media (max-width: 550px) {
+    zoom: 25%;
+  }
+  @media (max-width: 450px) {
+    zoom: 20%;
+  }
+  @media (max-width: 350px) {
+    zoom: 15%;
+  }
 }
 
 .background {
@@ -16,7 +47,11 @@ body {
 [class*='__container'] {
   max-width: 1240px;
   margin: 0 auto;
-  // border: 1px solid rgb(255, 89, 0);
+  // border: 1px solid rgb(47, 255, 0);
+  @media (max-width: 1240px) {
+    // margin: 0 10px;
+  }
+  // overflow: hidden;
 }
 
 .hidden {
