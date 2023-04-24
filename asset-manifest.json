@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/npm%20run%20build/static/css/main.cffa29f7.css",
+    "main.js": "/npm%20run%20build/static/js/main.a5ac6d6c.js",
+    "static/media/whatsApp.png": "/npm%20run%20build/static/media/whatsApp.3574c199b35d6a03f7a1.png",
+    "static/media/settings.svg": "/npm%20run%20build/static/media/settings.312ee45c1cc4b7a8e651fd06049047a0.svg",
+    "static/media/registration.svg": "/npm%20run%20build/static/media/registration.2ca922d1ebc1b7396ce06619ef478914.svg",
+    "static/media/complete.svg": "/npm%20run%20build/static/media/complete.871d590164d18ec066bb6a832622e3be.svg",
+    "index.html": "/npm%20run%20build/index.html",
+    "static/media/logo.svg": "/npm%20run%20build/static/media/logo.b992b78822cde2be8972ad246c42a9e1.svg",
+    "static/media/chevron-down.svg": "/npm%20run%20build/static/media/chevron-down.738f230614cdcc6b7d806025216ff638.svg",
+    "main.cffa29f7.css.map": "/npm%20run%20build/static/css/main.cffa29f7.css.map",
+    "main.a5ac6d6c.js.map": "/npm%20run%20build/static/js/main.a5ac6d6c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cffa29f7.css",
+    "static/js/main.a5ac6d6c.js"
+  ]
+}
