@@ -1,19 +1,14 @@
 {
   "files": {
-    "main.css": "/react-sendler/static/css/main.42192fcd.css",
-    "main.js": "/react-sendler/static/js/main.4f1a5b6b.js",
-    "static/media/whatsApp.png": "/react-sendler/static/media/whatsApp.3574c199b35d6a03f7a1.png",
-    "static/media/settings.svg": "/react-sendler/static/media/settings.312ee45c1cc4b7a8e651fd06049047a0.svg",
-    "static/media/registration.svg": "/react-sendler/static/media/registration.2ca922d1ebc1b7396ce06619ef478914.svg",
-    "static/media/complete.svg": "/react-sendler/static/media/complete.871d590164d18ec066bb6a832622e3be.svg",
+    "main.css": "/react-sendler/static/css/main.aba6579d.css",
+    "main.js": "/react-sendler/static/js/main.a93173f9.js",
     "index.html": "/react-sendler/index.html",
     "static/media/logo.svg": "/react-sendler/static/media/logo.b992b78822cde2be8972ad246c42a9e1.svg",
-    "static/media/chevron-down.svg": "/react-sendler/static/media/chevron-down.738f230614cdcc6b7d806025216ff638.svg",
-    "main.42192fcd.css.map": "/react-sendler/static/css/main.42192fcd.css.map",
-    "main.4f1a5b6b.js.map": "/react-sendler/static/js/main.4f1a5b6b.js.map"
+    "main.aba6579d.css.map": "/react-sendler/static/css/main.aba6579d.css.map",
+    "main.a93173f9.js.map": "/react-sendler/static/js/main.a93173f9.js.map"
   },
   "entrypoints": [
-    "static/css/main.42192fcd.css",
-    "static/js/main.4f1a5b6b.js"
+    "static/css/main.aba6579d.css",
+    "static/js/main.a93173f9.js"
   ]
 }
