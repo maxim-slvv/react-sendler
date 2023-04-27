@@ -7,7 +7,6 @@ export const Footer = () => {
     <div className={style.footer}>
       <div className="__container">
         <div className={style.left}>
-          {' '}
           <ul>
             <li>Политика Cookies</li>
             <li>Правила использования</li>

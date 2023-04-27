@@ -1,59 +1,14 @@
 @import './_variables.scss';
 @import './_normalize.scss';
-@import './_hoverCards.scss';
-@import './_redButton.scss';
 /*--------------------*/
 
 body {
-  overflow-x: hidden;
-  background-color: $border-color;
-  @media (max-width: 1700px) {
-    zoom: 90%;
-  }
-  @media (max-width: 1505px) {
-    zoom: 70%;
-  }
-
-  @media (max-width: 1300px) {
-    zoom: 60%;
-  }
-  @media (max-width: 1020px) {
-    zoom: 50%;
-  }
-  @media (max-width: 900px) {
-    zoom: 40%;
-  }
-  @media (max-width: 700px) {
-    zoom: 35%;
-  }
-  @media (max-width: 600px) {
-    zoom: 32%;
-  }
-  @media (max-width: 550px) {
-    zoom: 25%;
-  }
-  @media (max-width: 450px) {
-    zoom: 20%;
-  }
-  @media (max-width: 350px) {
-    zoom: 15%;
-  }
-}
-
-.background {
-  background-color: darken(#5175a8, 5%);
+  background-color: #f5f5f5;
 }
 
 [class*='__container'] {
-  max-width: 1240px;
+  max-width: 1920px;
   margin: 0 auto;
-  // border: 1px solid rgb(47, 255, 0);
-  @media (max-width: 1240px) {
-    // margin: 0 10px;
-  }
-  // overflow: hidden;
-}
 
-.hidden {
-  display: none;
+  // border: 1px solid rgb(47, 255, 0);
 }
