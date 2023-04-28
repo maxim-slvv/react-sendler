@@ -14,10 +14,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Layout />}>
-          {/* <Route index element={<Home />} /> */}
           <Route index element={<Dashboard />} />
-          {/* <Route index element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} /> */}
         </Route>
         {/* вынес ниже что бы исключить футеры и хэдеры */}
         <Route path="*" element={<NotFoundPage />} />

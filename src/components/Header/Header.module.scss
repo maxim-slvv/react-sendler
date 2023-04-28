@@ -1,9 +1,17 @@
+.wrapper {
+  //магия фиксирования - если элемент зафиксирован то от него нету скролла
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
 .header {
   -webkit-user-select: none; /* запретить выделение для webkit браузеров */
   -moz-user-select: none; /* запретить выделение для Firefox */
   -ms-user-select: none; /* запретить выделение для IE */
   user-select: none; /* запретить выделение для остальных браузеров */
-  background: #ffffff;
+  background-color: #ffffff;
   box-shadow: 18px 30px 30px -8px rgba(0, 0, 0, 0.05);
 }
 
@@ -17,6 +25,8 @@
     padding: 0px 20px;
   }
 }
+
+//!--------------------------BURGER----------------------------//
 
 $burgerWidth: 256px;
 $roundDiameter: 40px;
@@ -32,13 +42,21 @@ $popupMarginRight: 8px;
   }
 }
 
-.burger {
+.burger,
+.burgerOpen {
+  overflow: hidden;
   padding: 30px 16px 0px;
   display: flex;
+  flex-direction: column;
   position: absolute;
   content: '';
   width: 256px;
+  background-color: #ffffff;
+  // height: 91%;
+  height: 100vh;
+  box-shadow: 4px 10px 10px -4px rgba(0, 0, 0, 0.05);
   .burgerItems {
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -70,10 +88,21 @@ $popupMarginRight: 8px;
     }
   }
   @media (max-width: 768px) {
-    display: none;
+    transition: all 0.25s ease-in-out;
+    transform: translateX(-100%);
   }
 }
 
+.burgerOpen {
+  transition: all 0.25s ease-in-out;
+  transform: translateX(-100%);
+  @media (max-width: 768px) {
+    transition: all 0.25s ease-in-out;
+    transform: translateX(0%);
+  }
+}
+
+//!--------------------------LOGO----------------------------//
 .logo {
   display: flex;
   align-items: center;
@@ -83,9 +112,19 @@ $popupMarginRight: 8px;
   }
 }
 
+//!--------------------------OUR STYLES----------------------------//
+
+.logo,
+.popup,
+.user,
+.burgerItem {
+  cursor: pointer;
+}
+
 .popupFlex {
   flex: 1 0 auto;
 }
+
 .popup,
 .user {
   height: 60px;
@@ -109,6 +148,7 @@ $popupMarginRight: 8px;
   }
 }
 
+//!--------------------------POPUP----------------------------//
 .popup {
   width: fit-content;
   flex: 1 0;
@@ -138,6 +178,8 @@ $popupMarginRight: 8px;
     }
   }
 }
+
+//!--------------------------USER----------------------------//
 
 .user {
   width: fit-content;
