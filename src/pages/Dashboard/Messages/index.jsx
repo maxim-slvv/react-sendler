@@ -1,17 +1,15 @@
 import React from 'react';
 
-import { Title } from '../components/DashBoardComponent/Title';
+import { Title } from '../../../components/DashBoardComponent/Title';
 
-const Dashboard = () => {
+export const Messages = () => {
   return (
     <div className="__container">
       <div className="__contentBOX">
         <div className="__contentSmall">
-          <Title text="Обзор" />
+          <Title text="Письма" />
         </div>
       </div>
     </div>
   );
 };
-
-export default Dashboard;

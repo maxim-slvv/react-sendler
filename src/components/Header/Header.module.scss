@@ -42,19 +42,40 @@ $popupMarginRight: 8px;
   }
 }
 
+.burgerItem {
+  svg {
+    fill: #676a7d;
+    height: 24px;
+    width: 24px;
+    margin-right: 16px;
+  }
+  &:hover {
+    color: #852876;
+    svg {
+      fill: #852876;
+    }
+  }
+  &.active {
+    color: #852876;
+    font-weight: 700;
+    svg {
+      fill: #852876;
+    }
+  }
+}
+
 .burger,
 .burgerOpen {
+  position: absolute;
+  content: '';
+  width: 256px;
+  height: 100vh;
   overflow: hidden;
   padding: 30px 16px 0px;
   display: flex;
   flex-direction: column;
-  position: absolute;
-  content: '';
-  width: 256px;
   background-color: #ffffff;
-  // height: 91%;
-  height: 100vh;
-  box-shadow: 4px 10px 10px -4px rgba(0, 0, 0, 0.05);
+  box-shadow: 4px 20px 20px -1px rgba(0, 0, 0, 0.05);
   .burgerItems {
     overflow: hidden;
     display: flex;
@@ -62,10 +83,14 @@ $popupMarginRight: 8px;
     width: 100%;
 
     .burgerItem {
+      font-size: 18px;
+      @media (max-width: 768px) {
+        font-size: 16px;
+      }
       padding: 16px;
       height: 55px;
       width: 224px;
-      border: 1px solid #e7d4e4;
+      // border: 1px solid #e7d4e4;
       margin-bottom: 8px;
       border-radius: 15px;
       &:hover {
@@ -105,10 +130,16 @@ $popupMarginRight: 8px;
 //!--------------------------LOGO----------------------------//
 .logo {
   display: flex;
+  text-align: center;
   align-items: center;
+  vertical-align: middle;
   width: 226px;
   @media (max-width: 768px) {
     display: none;
+  }
+  a {
+    display: flex;
+    align-self: center;
   }
 }
 
@@ -132,7 +163,7 @@ $popupMarginRight: 8px;
   align-items: center;
   border-radius: 15px;
   padding: 10px;
-  background-color: #dadada43;
+  background-color: #dadada27;
   .arrow {
     height: 20px;
     width: 20px;

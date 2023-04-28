@@ -6,17 +6,28 @@ body {
   background-color: #fafbfc;
 }
 
-[class*='__сontentBOX'] {
+[class*='__container'] {
+  max-width: 1920px;
+  margin: 0 auto;
+  // border: 1px solid rgb(47, 255, 0);
+}
+
+[class*='__contentBOX'] {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
   margin-left: 256px;
   margin-top: 88px;
+  padding: 0px 32px 32px;
   @media (max-width: 768px) {
     margin-left: 0;
   }
 }
 
-[class*='__container'] {
-  max-width: 1920px;
-  margin: 0 auto;
-
-  border: 1px solid rgb(47, 255, 0);
+[class*='__contentSmall'] {
+  overflow: hidden;
+  width: 1120px;
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
 }
