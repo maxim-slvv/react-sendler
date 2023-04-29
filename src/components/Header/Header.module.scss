@@ -42,28 +42,6 @@ $popupMarginRight: 8px;
   }
 }
 
-.burgerItem {
-  svg {
-    fill: #676a7d;
-    height: 24px;
-    width: 24px;
-    margin-right: 16px;
-  }
-  &:hover {
-    color: #852876;
-    svg {
-      fill: #852876;
-    }
-  }
-  &.active {
-    color: #852876;
-    font-weight: 700;
-    svg {
-      fill: #852876;
-    }
-  }
-}
-
 .burger,
 .burgerOpen {
   position: absolute;
@@ -106,7 +84,8 @@ $popupMarginRight: 8px;
     position: relative;
     width: 100%;
 
-    .burgerItem {
+    .burgerItem,
+    .burgerItemActive {
       font-size: 18px;
       @media (max-width: 768px) {
         font-size: 16px;
@@ -139,6 +118,39 @@ $popupMarginRight: 8px;
   @media (max-width: 768px) {
     transition: all 0.25s ease-in-out;
     transform: translateX(-100%);
+  }
+}
+
+.burgerItem {
+  svg {
+    fill: #676a7d;
+    height: 24px;
+    width: 24px;
+    margin-right: 16px;
+  }
+  &:hover {
+    color: #852876;
+    svg {
+      fill: #852876;
+    }
+  }
+  &.active {
+    color: #852876;
+    font-weight: 700;
+    svg {
+      fill: #852876;
+    }
+  }
+}
+.burgerItemActive {
+  background-color: #e7d4e4;
+  font-weight: 700;
+  color: #852876;
+  svg {
+    fill: #852876;
+    height: 24px;
+    width: 24px;
+    margin-right: 16px;
   }
 }
 

@@ -16,7 +16,6 @@ export const Header = () => {
   React.useEffect(() => {
     function handleResize() {
       if (window.innerWidth < 768) {
-        // ширина окна меньше 768px
         setIsOpen(false); // закрыть меню
       }
     }
@@ -31,7 +30,10 @@ export const Header = () => {
       <nav className={isOpen ? style.burgerOpen : style.burger}>
         <div className={style.burgerItems}>
           <Link to={'/dashboard'} onClick={() => setIsOpen(false)}>
-            <span className={style.burgerItem}>
+            <span
+              className={
+                location.pathname === '/dashboard' ? style.burgerItemActive : style.burgerItem
+              }>
               <svg viewBox="0 0 24 24" fill="none">
                 <path
                   fill-rule="evenodd"
@@ -42,7 +44,11 @@ export const Header = () => {
             </span>
           </Link>
           <Link to={'/sendings'}>
-            <span className={style.burgerItem} onClick={() => setIsOpen(false)}>
+            <span
+              className={
+                location.pathname === '/sendings' ? style.burgerItemActive : style.burgerItem
+              }
+              onClick={() => setIsOpen(false)}>
               <svg viewBox="0 0 24 24" fill="none">
                 <path
                   fill-rule="evenodd"
@@ -53,7 +59,11 @@ export const Header = () => {
             </span>
           </Link>
           <Link to={'/messages'}>
-            <span className={style.burgerItem} onClick={() => setIsOpen(false)}>
+            <span
+              className={
+                location.pathname === '/messages' ? style.burgerItemActive : style.burgerItem
+              }
+              onClick={() => setIsOpen(false)}>
               <svg viewBox="0 0 24 24" fill="none">
                 <path
                   fill-rule="evenodd"
@@ -64,7 +74,11 @@ export const Header = () => {
             </span>
           </Link>
           <Link to={'/contacts'}>
-            <span className={style.burgerItem} onClick={() => setIsOpen(false)}>
+            <span
+              className={
+                location.pathname === '/contacts' ? style.burgerItemActive : style.burgerItem
+              }
+              onClick={() => setIsOpen(false)}>
               <svg viewBox="0 0 24 24" fill="none">
                 <path
                   fill-rule="evenodd"
@@ -75,7 +89,11 @@ export const Header = () => {
             </span>
           </Link>
           <Link to={'/templates'}>
-            <span className={style.burgerItem} onClick={() => setIsOpen(false)}>
+            <span
+              className={
+                location.pathname === '/templates' ? style.burgerItemActive : style.burgerItem
+              }
+              onClick={() => setIsOpen(false)}>
               <svg viewBox="0 0 24 24" fill="none">
                 <path
                   fill-rule="evenodd"
