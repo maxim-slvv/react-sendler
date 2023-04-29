@@ -8,7 +8,7 @@ export const Sendings: React.FC = () => {
       <div className="__container">
         <div className="__contentBOX">
           <div className="__contentSmall">
-            <Title text="Рассылки" />
+            <Title title="Рассылки" />
           </div>
         </div>
       </div>

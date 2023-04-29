@@ -18,10 +18,10 @@ function App() {
         ) : (
           <Route path="/" element={<Layout />}>
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/messages/" element={<Messages />} />
-            <Route path="/sendings/" element={<Sendings />} />
-            <Route path="/contacts/" element={<Contacts />} />
-            <Route path="/templates/" element={<Templates />} />
+            <Route path="/messages" element={<Messages />} />
+            <Route path="/sendings" element={<Sendings />} />
+            <Route path="/contacts" element={<Contacts />} />
+            <Route path="/templates" element={<Templates />} />
           </Route>
         )}
         <Route path="*" element={<NotFoundPage />} />

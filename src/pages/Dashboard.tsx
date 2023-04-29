@@ -7,7 +7,7 @@ const Dashboard = () => {
     <div className="__container">
       <div className="__contentBOX">
         <div className="__contentSmall">
-          <Title text="Обзор" />
+          <Title title="Обзор" />
         </div>
       </div>
     </div>
