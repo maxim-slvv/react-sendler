@@ -4,6 +4,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1000;
 }
 
 .header {
@@ -72,7 +73,7 @@ $popupMarginRight: 8px;
       left: 0;
       height: 32px;
       width: 32px;
-      background: darken(#fafbfc, 3%);
+      background: darken(#fafbfc, 2%);
       border-radius: 15px 0px 0px 0px;
     }
   }

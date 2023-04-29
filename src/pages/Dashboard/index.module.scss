@@ -1,0 +1,23 @@
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  //   background-color: rgba(0, 85, 255, 0.217);
+  gap: 32px;
+  @media (max-width: 900px) {
+    gap: 5px;
+  }
+}
+
+.sendings {
+}
+
+.cards {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  // & > *:not(:last-child) {
+  //   margin-bottom: 15px;
+  // }
+  // background-color: rgba(102, 51, 153, 0.372);
+}

@@ -1,15 +1,15 @@
 import React from 'react';
-import style from './Title.module.scss';
+import style from './TitleSmall.module.scss';
 import '../../../scss/index.scss';
 
 interface TitleProps {
   title: string;
 }
 
-export const Title: React.FC<TitleProps> = (props) => {
+export const TitleSmall: React.FC<TitleProps> = (props) => {
   return (
     <div className={style.box}>
-      <h2>{props.title}</h2>
+      <h3>{props.title}</h3>
     </div>
   );
 };

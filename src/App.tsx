@@ -3,7 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 
 import Layout from './pages/Layout';
 import Home from './pages/Home';
-import Dashboard from './pages/Dashboard';
+import Dashboard from './pages/Dashboard/Dashboard';
 import { Messages, Sendings, Contacts, Templates, NotFoundPage } from './pages/index';
 
 import './scss/index.scss';
