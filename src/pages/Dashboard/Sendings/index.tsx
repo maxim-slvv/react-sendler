@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Title } from '../../../components/DashBoardComponent/Title';
 
-export const Sendings = () => {
+export const Sendings: React.FC = () => {
   return (
     <div>
       <div className="__container">

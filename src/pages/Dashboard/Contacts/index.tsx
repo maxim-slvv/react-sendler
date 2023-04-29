@@ -2,12 +2,12 @@ import React from 'react';
 
 import { Title } from '../../../components/DashBoardComponent/Title';
 
-export const Contacts = () => {
+export const Contacts: React.FC = () => {
   return (
     <div className="__container">
       <div className="__contentBOX">
         <div className="__contentSmall">
-          <Title text="Контакты" />
+          <Title title={'Контакты'} />
         </div>
       </div>
     </div>

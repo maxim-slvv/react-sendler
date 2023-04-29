@@ -28,7 +28,7 @@ export const Header = () => {
 
   const Burger = () => {
     return (
-      <nav checked className={isOpen ? style.burgerOpen : style.burger}>
+      <nav className={isOpen ? style.burgerOpen : style.burger}>
         <div className={style.burgerItems}>
           <Link to={'/dashboard'} onClick={() => setIsOpen(false)}>
             <span className={style.burgerItem}>
@@ -86,6 +86,7 @@ export const Header = () => {
             </span>
           </Link>
         </div>
+        <div className={style.border}></div>
       </nav>
     );
   };

@@ -1,12 +1,15 @@
 import React from 'react';
-
 import style from './Title.module.scss';
 import '../../../scss/index.scss';
 
-export const Title = ({ text }) => {
+interface TitleProps {
+  title: string;
+}
+
+export const Title: React.FC<TitleProps> = (props) => {
   return (
     <div className={style.dashboard}>
-      <h3>{text}</h3>
+      <h3>{props.title}</h3>
     </div>
   );
 };

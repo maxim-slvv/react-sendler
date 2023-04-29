@@ -12,7 +12,7 @@
   -ms-user-select: none; /* запретить выделение для IE */
   user-select: none; /* запретить выделение для остальных браузеров */
   background-color: #ffffff;
-  box-shadow: 18px 30px 30px -8px rgba(0, 0, 0, 0.05);
+  // box-shadow: 18px 30px 30px -8px rgba(0, 0, 0, 0.05);
 }
 
 .box {
@@ -70,16 +70,40 @@ $popupMarginRight: 8px;
   content: '';
   width: 256px;
   height: 100vh;
-  overflow: hidden;
+  // overflow: hidden;
   padding: 30px 16px 0px;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
-  box-shadow: 4px 20px 20px -1px rgba(0, 0, 0, 0.05);
+  // box-shadow: 4px 20px 20px -1px rgba(0, 0, 0, 0.05);
+
+  .border {
+    position: absolute;
+    content: '';
+    top: 0px;
+    right: -32px;
+    background-color: #ffffff;
+    height: 32px;
+    width: 32px;
+
+    // z-index: 0;
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      height: 32px;
+      width: 32px;
+      background: darken(#fafbfc, 3%);
+      border-radius: 15px 0px 0px 0px;
+    }
+  }
+
   .burgerItems {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    position: relative;
     width: 100%;
 
     .burgerItem {
