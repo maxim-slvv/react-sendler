@@ -8,6 +8,15 @@
   max-width: 326px;
   height: 202px;
   width: 160px;
+  @media (max-width: 550px) {
+    zoom: 80%;
+  }
+  @media (max-width: 450px) {
+    zoom: 60%;
+  }
+  @media (max-width: 350px) {
+    zoom: 56%;
+  }
 }
 .title {
   display: flex;

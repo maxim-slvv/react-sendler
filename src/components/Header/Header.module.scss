@@ -64,7 +64,9 @@ $popupMarginRight: 8px;
     background-color: #ffffff;
     height: 32px;
     width: 32px;
-
+    @media (max-width: 789px) {
+      opacity: 0;
+    }
     // z-index: 0;
     &::before {
       position: absolute;
