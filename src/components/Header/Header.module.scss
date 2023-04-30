@@ -64,6 +64,12 @@ $popupMarginRight: 8px;
     background-color: #ffffff;
     height: 32px;
     width: 32px;
+    @media (max-width: 1380px) {
+      height: 15px;
+      width: 15px;
+      right: -15px;
+      // background-color: red;
+    }
     @media (max-width: 789px) {
       opacity: 0;
     }
@@ -75,6 +81,10 @@ $popupMarginRight: 8px;
       left: 0;
       height: 32px;
       width: 32px;
+      @media (max-width: 1380px) {
+        height: 15px;
+        width: 15px;
+      }
       background: darken(#fafbfc, 2%);
       border-radius: 15px 0px 0px 0px;
     }

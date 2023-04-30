@@ -1,3 +1,6 @@
+import React from 'react';
+import mixitup from 'mixitup';
+
 import { Link } from 'react-router-dom';
 
 import { Title } from '../../components/DashBoardComponent/Title';
@@ -46,6 +49,23 @@ const data = [
 ];
 
 const Dashboard = () => {
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  React.useEffect(() => {
+    var mixer = mixitup('.container', {
+      selectors: {
+        target: '.mix',
+      },
+      animation: {
+        duration: 400,
+        effectsOut: 'fade translateY(-100%)',
+
+        easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
+      },
+    });
+    //начальное значение
+    mixer.filter('.mix');
+  }, [containerRef]);
+
   return (
     <div className="__container">
       <div className="__contentBOX">
@@ -62,21 +82,37 @@ const Dashboard = () => {
               <CardAction title={`Создать шаблон`} color={'orange'} icon={'add'} />
             </Link>
           </section>
+
           <section className={style.sendings}>
-            <TitleSmall title="Активные рассылки" />
-            <div className={style.cards}>
-              {data.map((e, i) => {
-                return (
-                  <CardSendings
-                    key={i}
-                    title={e.name}
-                    date={e.date}
-                    state={e.state}
-                    progress={e.progress}
-                    type={e.type}
-                  />
-                );
-              })}
+            <div className={style.sort}>
+              <TitleSmall title="Активные рассылки" />
+              <button type="button" data-filter="all">
+                All
+              </button>
+              <button type="button" data-filter=".whatsapp">
+                WhatsApp
+              </button>
+              <button type="button" data-filter=".email">
+                Email
+              </button>
+            </div>
+
+            <div ref={containerRef} className="container">
+              <div className={style.cards}>
+                {data.map((e, i) => {
+                  return (
+                    <CardSendings
+                      key={i}
+                      num={(i = i + 1)}
+                      title={e.name}
+                      date={e.date}
+                      state={e.state}
+                      progress={e.progress}
+                      type={e.type}
+                    />
+                  );
+                })}
+              </div>
             </div>
           </section>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import style from './Sendings.module.scss';
+import style from './CardSendings.module.scss';
 import { Progressbar } from '../Progressbar/index';
 
 interface CardSendingsProps {
@@ -9,11 +9,12 @@ interface CardSendingsProps {
   progress: number;
   state: string;
   type: string;
+  num: number;
 }
 
 export const CardSendings: React.FC<CardSendingsProps> = (props) => {
   return (
-    <div className={style.card}>
+    <div className={`cardmix mix ${props.type} data-order='${props.num}'`} data-order={'1'}>
       <h4 className={style.title}>{props.title}</h4>
       <div className={style.date}>{props.date}</div>
       <div className={style.progress}>{props.state}</div>
