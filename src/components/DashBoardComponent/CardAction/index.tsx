@@ -1,6 +1,7 @@
 import React from 'react';
 
 import style from './CardAction.module.scss';
+import './cardMix.scss';
 
 interface CardActionProps {
   title: string;

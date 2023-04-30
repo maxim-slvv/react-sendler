@@ -14,14 +14,13 @@ interface CardSendingsProps {
 
 export const CardSendings: React.FC<CardSendingsProps> = (props) => {
   return (
-    <div className={`cardmix mix ${props.type} data-order='${props.num}'`} data-order={'1'}>
+    <div className={`cardmix mix ${props.type}`} data-order={props.date}>
       <h4 className={style.title}>{props.title}</h4>
       <div className={style.date}>{props.date}</div>
       <div className={style.progress}>{props.state}</div>
       <div className={style.scale}>
         <Progressbar scale={props.progress} />
       </div>
-
       <label
         style={{
           backgroundColor:

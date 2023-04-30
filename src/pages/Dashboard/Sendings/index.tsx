@@ -1,4 +1,7 @@
+import React from 'react';
+
 import { Link } from 'react-router-dom';
+import mixitup from 'mixitup';
 
 import { Title } from '../../../components/DashBoardComponent/Title';
 import { CardAction } from '../../../components/DashBoardComponent/CardAction';
@@ -56,6 +59,23 @@ const dataComplete = [
 ];
 
 export const Sendings: React.FC = () => {
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  React.useEffect(() => {
+    var mixer = mixitup('.container', {
+      selectors: {
+        target: '.mix',
+      },
+      animation: {
+        duration: 400,
+        effectsOut: 'fade translateY(-100%)',
+
+        easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
+      },
+    });
+    //начальное значение
+    mixer.filter('.mix');
+  }, [containerRef]);
+
   return (
     <div className="__container">
       <div className="__contentBOX">
@@ -86,20 +106,33 @@ export const Sendings: React.FC = () => {
           </section>
           <section className={style.sendings}>
             <TitleSmall title="История рассылок" />
-            <div className={style.cards}>
-              {dataComplete.map((e, i) => {
-                return (
-                  <CardSendings
-                    key={i}
-                    num={(i = i + 1)}
-                    title={e.name}
-                    date={e.date}
-                    state={e.state}
-                    progress={e.progress}
-                    type={e.type}
-                  />
-                );
-              })}
+            <div className={style.sort}>
+              <button type="button" data-filter="all">
+                All
+              </button>
+              <button type="button" data-filter=".whatsapp">
+                WhatsApp
+              </button>
+              <button type="button" data-filter=".email">
+                Email
+              </button>
+            </div>
+            <div ref={containerRef} className="container">
+              <div className={style.cards}>
+                {dataComplete.map((e, i) => {
+                  return (
+                    <CardSendings
+                      key={i}
+                      num={(i = i + 1)}
+                      title={e.name}
+                      date={e.date}
+                      state={e.state}
+                      progress={e.progress}
+                      type={e.type}
+                    />
+                  );
+                })}
+              </div>
             </div>
           </section>
         </div>

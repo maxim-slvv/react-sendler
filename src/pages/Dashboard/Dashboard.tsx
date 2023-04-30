@@ -9,6 +9,7 @@ import { TitleSmall } from '../../components/DashBoardComponent/TitleSmall';
 import { CardSendings } from '../../components/DashBoardComponent/CardSendings';
 
 import style from './index.module.scss';
+import { SortingTools } from '../../components/DashBoardComponent/SortingTools';
 
 const data = [
   {
@@ -63,6 +64,8 @@ const Dashboard = () => {
       },
     });
     //начальное значение
+    //TODO: тут буду делать поиск через поле ввода
+    //TODO: сделать проверку - если результатов нету то ничего не выводить
     mixer.filter('.mix');
   }, [containerRef]);
 
@@ -84,18 +87,8 @@ const Dashboard = () => {
           </section>
 
           <section className={style.sendings}>
-            <div className={style.sort}>
-              <TitleSmall title="Активные рассылки" />
-              <button type="button" data-filter="all">
-                All
-              </button>
-              <button type="button" data-filter=".whatsapp">
-                WhatsApp
-              </button>
-              <button type="button" data-filter=".email">
-                Email
-              </button>
-            </div>
+            <TitleSmall title="Активные рассылки" />
+            <SortingTools />
 
             <div ref={containerRef} className="container">
               <div className={style.cards}>
