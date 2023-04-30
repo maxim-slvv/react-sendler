@@ -14,12 +14,14 @@ export const SortingTools: React.FC = () => {
       <button type="button" data-filter=".email">
         Email
       </button>
-      <button type="button" data-sort="order:asc">
-        Новые
-      </button>
-      <button type="button" data-sort="order:descending">
-        Старые
-      </button>
+      <div className={style.order}>
+        <button type="button" data-sort="order:asc">
+          Новые
+        </button>
+        <button type="button" data-sort="order:descending">
+          Старые
+        </button>
+      </div>
     </div>
   );
 };

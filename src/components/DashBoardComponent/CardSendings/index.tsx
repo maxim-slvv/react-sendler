@@ -22,6 +22,7 @@ export const CardSendings: React.FC<CardSendingsProps> = (props) => {
         <Progressbar scale={props.progress} />
       </div>
       <label
+        className={style.type}
         style={{
           backgroundColor:
             props.type === 'email' ? '#cc5449' : props.type === 'whatsapp' ? '#1db7ad' : '#b71d1d',

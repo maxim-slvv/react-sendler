@@ -1,3 +1,39 @@
 .sort {
-  margin-left: 15px;
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 0px 15px 15px;
+  @media (max-width: 500px) {
+    align-items: center;
+    justify-content: center;
+    flex: 100%;
+  }
+  button {
+    font-weight: 700;
+    border: 0px;
+    padding: 10px;
+    width: 95px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid rgba(205, 205, 205, 0.24);
+    background-color: #ffffffab;
+    -webkit-box-shadow: 7px 7px 9px -2px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 7px 7px 9px -2px rgba(0, 0, 0, 0.15);
+    box-shadow: 7px 7px 9px -2px rgba(0, 0, 0, 0.15);
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+}
+.order {
+  display: flex;
+
+  // background-color: red;
+  @media (max-width: 500px) {
+    flex: 100%;
+  }
+  justify-content: center;
+  align-items: center;
+  // background-color: red;
+  flex-wrap: nowrap;
 }

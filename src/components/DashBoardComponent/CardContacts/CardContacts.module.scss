@@ -1,0 +1,43 @@
+.box {
+  margin-left: 15px;
+}
+
+.header,
+.carditem {
+  display: grid;
+  grid-template-columns: 1fr 15fr 15fr 15fr 15fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 10px;
+  //ограничить название до определенного количества символов
+  @media (max-width: 950px) {
+    grid-template-columns: 1fr 15fr 10fr 10fr 15fr;
+  }
+  //   grid-row-gap: 10px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  //   display: flex;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.cardMix {
+}
+.carditem {
+  //   display: flex;
+}
+.checkbox {
+}
+.name {
+}
+.data {
+}
+.quantity {
+}
+.buttonEdit {
+  width: 120px;
+}

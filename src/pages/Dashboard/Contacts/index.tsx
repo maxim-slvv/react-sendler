@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 
 import { Title } from '../../../components/DashBoardComponent/Title';
 import { CardAction } from '../../../components/DashBoardComponent/CardActions';
+import { CardContacts } from '../../../components/DashBoardComponent/CardContacts';
+import { TitleSmall } from '../../../components/DashBoardComponent/TitleSmall';
 
 import style from '../index.module.scss';
 
@@ -19,6 +21,8 @@ export const Contacts: React.FC = () => {
               <CardAction title={`Добавить вручную`} color={'orange'} icon={'add'} />
             </Link>
           </div>
+          <TitleSmall title="Списки" />
+          <CardContacts />
         </div>
       </div>
     </div>
