@@ -4,7 +4,7 @@ import mixitup from 'mixitup';
 import { Link } from 'react-router-dom';
 
 import { Title } from '../../components/DashBoardComponent/Title';
-import { CardAction } from '../../components/DashBoardComponent/CardAction';
+import { CardAction } from '../../components/DashBoardComponent/CardActions';
 import { TitleSmall } from '../../components/DashBoardComponent/TitleSmall';
 import { CardSendings } from '../../components/DashBoardComponent/CardSendings';
 
@@ -35,14 +35,14 @@ const data = [
   },
   {
     name: 'Приглашение на концерт',
-    date: '16.01.2022',
+    date: '15.01.2022',
     state: 'в процессе',
     progress: 30,
     type: 'whatsapp',
   },
   {
     name: 'Список с таргета организаторов',
-    date: '14.01.2023',
+    date: '13.01.2023',
     state: 'в процессе',
     progress: 10,
     type: 'email',

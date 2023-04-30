@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import { Title } from '../../../components/DashBoardComponent/Title';
-import { CardAction } from '../../../components/DashBoardComponent/CardAction';
+import { CardAction } from '../../../components/DashBoardComponent/CardActions';
 
 import style from '../index.module.scss';
 

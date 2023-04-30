@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom';
 import mixitup from 'mixitup';
 
 import { Title } from '../../../components/DashBoardComponent/Title';
-import { CardAction } from '../../../components/DashBoardComponent/CardAction';
+import { CardAction } from '../../../components/DashBoardComponent/CardActions';
 
 import style from '../index.module.scss';
 import { TitleSmall } from '../../../components/DashBoardComponent/TitleSmall';
 import { CardSendings } from '../../../components/DashBoardComponent/CardSendings';
+import { SortingTools } from '../../../components/DashBoardComponent/SortingTools';
 
 const dataAwait = [
   {
@@ -51,7 +52,7 @@ const dataComplete = [
   },
   {
     name: 'Обновление сайта',
-    date: '01.08.2023',
+    date: '02.08.2023',
     state: 'завершена',
     progress: 100,
     type: 'whatsapp',
@@ -106,17 +107,7 @@ export const Sendings: React.FC = () => {
           </section>
           <section className={style.sendings}>
             <TitleSmall title="История рассылок" />
-            <div className={style.sort}>
-              <button type="button" data-filter="all">
-                All
-              </button>
-              <button type="button" data-filter=".whatsapp">
-                WhatsApp
-              </button>
-              <button type="button" data-filter=".email">
-                Email
-              </button>
-            </div>
+            <SortingTools />
             <div ref={containerRef} className="container">
               <div className={style.cards}>
                 {dataComplete.map((e, i) => {
