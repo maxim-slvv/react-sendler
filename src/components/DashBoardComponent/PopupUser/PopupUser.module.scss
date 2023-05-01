@@ -49,14 +49,14 @@
   ul {
     width: 100%;
     position: absolute;
-    top: 80;
+    top: 80px;
     right: 0;
     @media (max-width: 835px) {
       right: 0px;
       width: 195px;
     }
     @media (max-width: 768px) {
-      right: 0px;
+      right: -40px;
       width: 195px;
     }
   }

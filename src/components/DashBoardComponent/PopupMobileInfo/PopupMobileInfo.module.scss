@@ -1,0 +1,76 @@
+.popup {
+  $burgerWidth: 256px;
+  $roundDiameter: 40px;
+  $popupMarginRight: 8px;
+
+  height: 60px;
+  display: none;
+  // display: flex;
+  // background-color: red;
+  // width: 50px;
+  @media (max-width: 768px) {
+    display: flex;
+  }
+  @media (max-width: 835px) {
+    // width: 232px;
+  }
+  @media (max-width: 835px) {
+    // width: 150px;
+  }
+
+  .menu {
+    position: relative;
+    width: auto;
+    background-color: #ffffff;
+    @media (max-width: 835px) {
+      // width: 232px;
+    }
+    @media (max-width: 520px) {
+      // width: 100px;
+    }
+  }
+
+  li {
+    display: flex;
+    width: auto;
+    height: auto;
+  }
+
+  ul {
+    width: 100%;
+    position: absolute;
+    top: 80px;
+
+    right: 0px;
+    width: 260px;
+  }
+
+  ul,
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    background-color: #ffffff;
+    & > * {
+      color: #232323;
+    }
+  }
+
+  button {
+    display: flex;
+    background-color: #ffffff;
+    height: 60px;
+    color: #232323;
+    border: none;
+    border-radius: 15px;
+    padding: 0px 0px 0px 18px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: left;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

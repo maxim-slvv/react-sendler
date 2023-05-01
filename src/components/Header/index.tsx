@@ -1,10 +1,11 @@
 import React from 'react';
 
-import logo from '../../assets/img/home/logo.svg';
+import logo from '../../assets/img/header/logo.svg';
 
 import { Link, useLocation } from 'react-router-dom';
 import { PopupStart } from '../DashBoardComponent/PopupStart';
 import { PopupUser } from '../DashBoardComponent/PopupUser';
+import { PopupMobileInfo } from '../DashBoardComponent/PopupMobileInfo';
 
 import './Header.module.scss';
 import style from './Header.module.scss';
@@ -147,6 +148,7 @@ export const Header = () => {
               <PopupStart />
             </div>
             <PopupUser />
+            <PopupMobileInfo />
           </div>
           {Burger()}
         </div>
