@@ -1,7 +1,10 @@
 .sort {
   display: flex;
+  width: max-content;
   flex-wrap: wrap;
-
+  -webkit-box-shadow: 7px 7px 9px -2px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 7px 7px 9px -2px rgba(0, 0, 0, 0.15);
+  box-shadow: 7px 7px 9px -2px rgba(0, 0, 0, 0.15);
   margin: 0px 15px 15px;
   @media (max-width: 500px) {
     align-items: center;
@@ -13,13 +16,11 @@
     border: 0px;
     padding: 10px;
     width: 95px;
-    border-radius: 5px;
+    // border-radius: 5px;
     cursor: pointer;
     border: 1px solid rgba(205, 205, 205, 0.24);
     background-color: #ffffffab;
-    -webkit-box-shadow: 7px 7px 9px -2px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 7px 7px 9px -2px rgba(0, 0, 0, 0.15);
-    box-shadow: 7px 7px 9px -2px rgba(0, 0, 0, 0.15);
+
     &:active {
       transform: translateY(2px);
     }
