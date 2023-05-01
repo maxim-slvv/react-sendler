@@ -37,14 +37,10 @@ export const PopupUser = () => {
         animate={isOpen ? 'open' : 'closed'}
         className={style.menu}>
         <motion.button whileTap={{ scale: 0.97 }} onClick={() => setIsOpen(!isOpen)}>
-          <div className={style.plus}>
-            <svg className={style.plusIcon} viewBox="4 4 16 16" fill="none">
-              <path
-                d="M16.85 11.335a.334.334 0 01.335.335v.66a.333.333 0 01-.334.335h-4.186v4.186a.333.333 0 01-.335.335h-.66a.334.334 0 01-.335-.335v-4.186H7.15a.334.334 0 01-.334-.335v-.66a.333.333 0 01.334-.335h4.186V7.15a.333.333 0 01.335-.334h.66a.333.333 0 01.335.334v4.186h4.186z"
-                fill="#ffffff"></path>
-            </svg>
+          <div className={style.plus} style={{ background: 'green' }}>
+            <p>S</p>
           </div>
-          <span>Создать рассылку</span>
+          <span>super-mail@gmail.com</span>
           <motion.div
             variants={{
               open: { rotate: 180 },
@@ -80,16 +76,16 @@ export const PopupUser = () => {
           }}
           style={{ pointerEvents: isOpen ? 'auto' : 'none' }}>
           <motion.li variants={itemVariants}>
-            <Link to={'/newemail'}>Email</Link>
+            <Link to={'/newemail'}>Coming soon</Link>
           </motion.li>
           <motion.li variants={itemVariants}>
-            <Link to={'/newemail'}>WhatsApp</Link>
+            <Link to={'/newemail'}>Coming soon</Link>
           </motion.li>
           <motion.li variants={itemVariants}>
-            <Link to={'/newemail'}>Шаблон Email</Link>
+            <Link to={'/newemail'}>Coming soon</Link>
           </motion.li>
           <motion.li variants={itemVariants}>
-            <Link to={'/newemail'}>Шаблон WhatsApp</Link>
+            <Link to={'/newemail'}>Coming soon</Link>
           </motion.li>
         </motion.ul>
       </motion.nav>

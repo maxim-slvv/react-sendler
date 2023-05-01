@@ -21,11 +21,13 @@
     margin-right: $popupMarginRight;
     background-color: #464a61;
     border-radius: 50%;
-  }
-
-  .plusIcon {
-    height: 16px;
-    width: 16px;
+    .plusIcon {
+      height: 16px;
+      width: 16px;
+    }
+    p {
+      color: white;
+    }
   }
 
   .menu {
@@ -80,18 +82,23 @@
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
-    text-align: right;
+    text-align: left;
     margin-bottom: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 235px;
+
     @media (max-width: 835px) {
       width: 95px;
     }
 
     span {
       text-overflow: elipsis;
+      width: 140px; /* ширина блока */
+      white-space: nowrap; /* запрет переноса текста на новую строку */
+      overflow: hidden; /* скрытие части текста, которая не помещается в блок */
+      text-overflow: ellipsis; /* добавление многоточия в конце текста */
       @media (max-width: 835px) {
         display: none;
       }
