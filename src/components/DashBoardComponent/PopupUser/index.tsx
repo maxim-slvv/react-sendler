@@ -54,6 +54,7 @@ export const PopupUser = () => {
           </motion.div>
         </motion.button>
         <motion.ul
+          className={style.ul}
           variants={{
             open: {
               clipPath: 'inset(0% 0% 0% 0% round 10px)',
