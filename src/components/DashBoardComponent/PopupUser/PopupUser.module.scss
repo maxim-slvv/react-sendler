@@ -2,11 +2,16 @@
   $burgerWidth: 256px;
   $roundDiameter: 40px;
   $popupMarginRight: 8px;
-  margin-top: -20px;
+
   height: 60px;
   display: flex;
-  border-radius: 15px;
-  padding: 10px;
+  @media (max-width: 835px) {
+    width: 232px;
+  }
+  @media (max-width: 835px) {
+    width: 100px;
+  }
+
   .plus {
     display: flex;
     justify-content: center;
@@ -17,15 +22,19 @@
     background-color: #464a61;
     border-radius: 50%;
   }
+
   .plusIcon {
     height: 16px;
     width: 16px;
   }
 
   .menu {
-    width: 232px;
+    position: relative;
     @media (max-width: 835px) {
-      width: 220px;
+      width: 232px;
+    }
+    @media (max-width: 520px) {
+      width: 100px;
     }
   }
 
@@ -33,13 +42,21 @@
     display: flex;
     width: auto;
     height: auto;
-    // transform: translateX(0px);
-    // transition: transform ease 0.3s;
-    // :hover {
-    //   transition: transform ease 0.5s;
-    //   transform: translateX(5px);
-    //   background-color: #ca1f1f;
-    // }
+  }
+
+  ul {
+    width: 100%;
+    position: absolute;
+    top: 80;
+    right: 0;
+    @media (max-width: 835px) {
+      right: 0px;
+      width: 195px;
+    }
+    @media (max-width: 768px) {
+      right: 0px;
+      width: 195px;
+    }
   }
 
   ul,
@@ -47,7 +64,6 @@
     list-style: none;
     margin: 0;
     padding: 10px;
-
     background-color: #ffffff;
     & > * {
       color: #232323;
@@ -57,8 +73,6 @@
   button {
     display: flex;
     height: 60px;
-    -webkit-appearance: button;
-    // background: red;
     color: #232323;
     border: none;
     border-radius: 15px;
@@ -66,27 +80,23 @@
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
-    width: 100%;
-    @media (max-width: 600px) {
-      width: 40%;
-    }
-    text-align: left;
+    text-align: right;
     margin-bottom: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 235px;
+    @media (max-width: 835px) {
+      width: 95px;
+    }
+
     span {
       text-overflow: elipsis;
-      // flex: 1 0;
-      // margin-right: $popupMarginRight;
-      // background-color: red;
-      // @media (max-width: 835px) {
-      //   display: none;
-      // }
-      @media (max-width: 600px) {
+      @media (max-width: 835px) {
         display: none;
       }
     }
+
     &:hover {
       background-color: #e7d4e4;
       transition: transform 0.5s ease;
@@ -100,17 +110,10 @@
     gap: 10px;
     border-radius: 15px;
     border: 1px solid #e7d4e4;
-    // background-color: red;
-    // border: 1px solid red;
+
     :hover {
-      // transition: transform ease 0.5s;
-      // transform: translateX(5px);
       background-color: #e7d4e4;
       border-radius: 5px;
     }
-  }
-
-  button path {
-    // fill: var(--background);
   }
 }

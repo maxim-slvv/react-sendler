@@ -1,4 +1,4 @@
-import style from './Popup.module.scss';
+import style from './PopupUser.module.scss';
 import { useState } from 'react';
 import { motion, Variants } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -13,7 +13,7 @@ const itemVariants: Variants = {
   closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
 };
 
-export const Popup = () => {
+export const PopupUser = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = React.useRef(null);
 
@@ -23,9 +23,7 @@ export const Popup = () => {
         setIsOpen(false);
       }
     };
-
     document.addEventListener('mousedown', handleClickOutside);
-
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };

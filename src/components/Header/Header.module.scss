@@ -231,35 +231,35 @@ $popupMarginRight: 8px;
 }
 
 //!--------------------------POPUP----------------------------//
-.popup {
-  width: fit-content;
-  flex: 1 0;
-  .plus {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: $roundDiameter;
-    width: $roundDiameter;
-    margin-right: $popupMarginRight;
-    background-color: #464a61;
-    border-radius: 50%;
-  }
-  .plusIcon {
-    height: 16px;
-    width: 16px;
-  }
-  span {
-    text-overflow: clip;
-    flex: 1 0;
-    margin-right: $popupMarginRight;
-    @media (max-width: 835px) {
-      width: 70px;
-    }
-    @media (max-width: 768px) {
-      display: none;
-    }
-  }
-}
+// .popup {
+//   width: fit-content;
+//   flex: 1 0;
+//   .plus {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: $roundDiameter;
+//     width: $roundDiameter;
+//     margin-right: $popupMarginRight;
+//     background-color: #464a61;
+//     border-radius: 50%;
+//   }
+//   .plusIcon {
+//     height: 16px;
+//     width: 16px;
+//   }
+//   span {
+//     text-overflow: clip;
+//     flex: 1 0;
+//     margin-right: $popupMarginRight;
+//     @media (max-width: 835px) {
+//       width: 70px;
+//     }
+//     @media (max-width: 768px) {
+//       display: none;
+//     }
+//   }
+// }
 
 //!--------------------------USER----------------------------//
 

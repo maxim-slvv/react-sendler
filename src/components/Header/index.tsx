@@ -5,30 +5,32 @@ import logo from '../../assets/img/home/logo.svg';
 import style from './Header.module.scss';
 import './Header.module.scss';
 import { Link, useLocation } from 'react-router-dom';
-import { Popup } from '../DashBoardComponent/Popup';
+import { PopupStart } from '../DashBoardComponent/PopupStart';
+import { PopupUser } from '../DashBoardComponent/PopupUser';
 
 export const Header = () => {
   const location = useLocation();
 
-  //TODO сделать на mouseenter
-
   const [isOpen, setIsOpen] = React.useState(false);
+  const menuRef = React.useRef(null);
 
   React.useEffect(() => {
-    function handleResize() {
-      if (window.innerWidth < 768) {
-        setIsOpen(false); // закрыть меню
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
       }
-    }
-    window.addEventListener('resize', handleResize);
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
     return () => {
-      window.removeEventListener('resize', handleResize);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
 
   const Burger = () => {
     return (
-      <nav className={isOpen ? style.burgerOpen : style.burger}>
+      <nav ref={menuRef} className={isOpen ? style.burgerOpen : style.burger}>
         <div className={style.burgerItems}>
           <Link to={'/dashboard'} onClick={() => setIsOpen(false)}>
             <span
@@ -138,7 +140,7 @@ export const Header = () => {
               </Link>
             </div>
             <div className={style.popupFlex}>
-              <Popup />
+              <PopupStart />
               {/* <div className={style.popup}>
                 <div className={style.plus}>
                   <svg className={style.plusIcon} viewBox="4 4 16 16" fill="none">
@@ -157,8 +159,8 @@ export const Header = () => {
                 </div>
               </div> */}
             </div>
-
-            <div className={style.user}>
+            <PopupUser />
+            {/* <div className={style.user}>
               <div className={style.avatar}></div>
               <div className={style.info}>
                 <span className={style.mail}>super-email@gmail.com</span>
@@ -171,7 +173,7 @@ export const Header = () => {
                     fill="#464a61"></path>
                 </svg>
               </div>
-            </div>
+            </div> */}
           </div>
           {Burger()}
         </div>
