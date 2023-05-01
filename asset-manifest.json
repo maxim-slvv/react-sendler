@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/react-sendler/static/css/main.9368ad50.css",
-    "main.js": "/react-sendler/static/js/main.ef7f156d.js",
+    "main.css": "/react-sendler/static/css/main.ee513159.css",
+    "main.js": "/react-sendler/static/js/main.f7a54dd8.js",
     "index.html": "/react-sendler/index.html",
     "static/media/logo.svg": "/react-sendler/static/media/logo.b992b78822cde2be8972ad246c42a9e1.svg",
-    "main.9368ad50.css.map": "/react-sendler/static/css/main.9368ad50.css.map",
-    "main.ef7f156d.js.map": "/react-sendler/static/js/main.ef7f156d.js.map"
+    "main.ee513159.css.map": "/react-sendler/static/css/main.ee513159.css.map",
+    "main.f7a54dd8.js.map": "/react-sendler/static/js/main.f7a54dd8.js.map"
   },
   "entrypoints": [
-    "static/css/main.9368ad50.css",
-    "static/js/main.ef7f156d.js"
+    "static/css/main.ee513159.css",
+    "static/js/main.f7a54dd8.js"
   ]
 }
