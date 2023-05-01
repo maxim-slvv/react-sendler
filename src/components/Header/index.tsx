@@ -26,11 +26,11 @@ export const Header = () => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, []);
+  }, [isOpen]);
 
   const Burger = () => {
     return (
-      <nav ref={menuRef} className={isOpen ? style.burgerOpen : style.burger}>
+      <nav className={isOpen ? style.burgerOpen : style.burger}>
         <div className={style.burgerItems}>
           <Link to={'/dashboard'} onClick={() => setIsOpen(false)}>
             <span
@@ -117,7 +117,10 @@ export const Header = () => {
       <header className={style.header}>
         <div className="__container">
           <div className={style.box}>
-            <div onClick={() => setIsOpen((prev) => !prev)} className={style.burgerButton}>
+            <div
+              ref={menuRef}
+              onClick={() => setIsOpen((prev) => !prev)}
+              className={style.burgerButton}>
               {isOpen ? (
                 <svg className={style.closeIcon} viewBox="0 0 24 24" fill="none">
                   <path
