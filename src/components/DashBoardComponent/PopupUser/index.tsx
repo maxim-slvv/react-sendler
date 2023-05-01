@@ -76,16 +76,16 @@ export const PopupUser = () => {
           }}
           style={{ pointerEvents: isOpen ? 'auto' : 'none' }}>
           <motion.li variants={itemVariants}>
-            <Link to={'/newemail'}>Coming soon</Link>
+            <Link to={'#'}>Coming soon</Link>
           </motion.li>
           <motion.li variants={itemVariants}>
-            <Link to={'/newemail'}>Coming soon</Link>
+            <Link to={'#'}>Coming soon</Link>
           </motion.li>
           <motion.li variants={itemVariants}>
-            <Link to={'/newemail'}>Coming soon</Link>
+            <Link to={'#'}>Coming soon</Link>
           </motion.li>
           <motion.li variants={itemVariants}>
-            <Link to={'/newemail'}>Coming soon</Link>
+            <Link to={'#'}>Coming soon</Link>
           </motion.li>
         </motion.ul>
       </motion.nav>

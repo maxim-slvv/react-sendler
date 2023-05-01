@@ -83,13 +83,13 @@ export const PopupStart = () => {
             <Link to={'/newemail'}>Email</Link>
           </motion.li>
           <motion.li variants={itemVariants}>
-            <Link to={'/newemail'}>WhatsApp</Link>
+            <Link to={'/newwhatsapp'}>WhatsApp</Link>
           </motion.li>
           <motion.li variants={itemVariants}>
-            <Link to={'/newemail'}>Шаблон Email</Link>
+            <Link to={'#'}>Coming soon</Link>
           </motion.li>
           <motion.li variants={itemVariants}>
-            <Link to={'/newemail'}>Шаблон WhatsApp</Link>
+            <Link to={'#'}>Coming soon</Link>
           </motion.li>
         </motion.ul>
       </motion.nav>

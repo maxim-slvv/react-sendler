@@ -1,12 +1,13 @@
 import React from 'react';
-//TODO сделать на mouseenter
-// import { DropMenu } from '../HomeComponents/DropMenu/index';
+
 import logo from '../../assets/img/home/logo.svg';
-import style from './Header.module.scss';
-import './Header.module.scss';
+
 import { Link, useLocation } from 'react-router-dom';
 import { PopupStart } from '../DashBoardComponent/PopupStart';
 import { PopupUser } from '../DashBoardComponent/PopupUser';
+
+import './Header.module.scss';
+import style from './Header.module.scss';
 
 export const Header = () => {
   const location = useLocation();

@@ -94,7 +94,6 @@
     }
 
     span {
-      text-overflow: elipsis;
       width: 140px; /* ширина блока */
       white-space: nowrap; /* запрет переноса текста на новую строку */
       overflow: hidden; /* скрытие части текста, которая не помещается в блок */
