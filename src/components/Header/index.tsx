@@ -3,9 +3,9 @@ import React from 'react';
 import logo from '../../assets/img/header/logo.svg';
 
 import { Link, useLocation } from 'react-router-dom';
-import { PopupStart } from '../DashBoardComponent/PopupStart';
-import { PopupUser } from '../DashBoardComponent/PopupUser';
-import { PopupMobileInfo } from '../DashBoardComponent/PopupMobileInfo';
+import { PopupStart } from './PopupStart';
+import { PopupUser } from './PopupUser';
+import { PopupMobileInfo } from './PopupMobileInfo';
 
 import './Header.module.scss';
 import style from './Header.module.scss';
