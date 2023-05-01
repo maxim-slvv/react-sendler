@@ -5,6 +5,7 @@ import logo from '../../assets/img/home/logo.svg';
 import style from './Header.module.scss';
 import './Header.module.scss';
 import { Link, useLocation } from 'react-router-dom';
+import { Popup } from '../DashBoardComponent/Popup';
 
 export const Header = () => {
   const location = useLocation();
@@ -137,7 +138,8 @@ export const Header = () => {
               </Link>
             </div>
             <div className={style.popupFlex}>
-              <div className={style.popup}>
+              <Popup />
+              {/* <div className={style.popup}>
                 <div className={style.plus}>
                   <svg className={style.plusIcon} viewBox="4 4 16 16" fill="none">
                     <path
@@ -153,7 +155,7 @@ export const Header = () => {
                       fill="#464a61"></path>
                   </svg>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className={style.user}>

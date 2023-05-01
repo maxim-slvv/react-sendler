@@ -57,6 +57,7 @@ $popupMarginRight: 8px;
   // box-shadow: 4px 20px 20px -1px rgba(0, 0, 0, 0.05);
 
   .border {
+    z-index: -10;
     position: absolute;
     content: '';
     top: 0px;
@@ -73,7 +74,7 @@ $popupMarginRight: 8px;
     @media (max-width: 789px) {
       opacity: 0;
     }
-    // z-index: 0;
+
     &::before {
       position: absolute;
       content: '';
@@ -213,6 +214,7 @@ $popupMarginRight: 8px;
   border-radius: 15px;
   padding: 10px;
   background-color: #dadada27;
+  background-color: red;
   .arrow {
     height: 20px;
     width: 20px;
@@ -268,7 +270,7 @@ $popupMarginRight: 8px;
     height: $roundDiameter;
     width: $roundDiameter;
     margin-right: $popupMarginRight;
-    @media (max-width: 768px) {
+    @media (max-width: 830px) {
       span {
         display: none;
       }
@@ -284,7 +286,7 @@ $popupMarginRight: 8px;
     }
     .id {
     }
-    @media (max-width: 768px) {
+    @media (max-width: 835px) {
       span {
         display: none;
       }
