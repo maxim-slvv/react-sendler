@@ -75,18 +75,18 @@ export const PopupUser = () => {
             },
           }}
           style={{ pointerEvents: isOpen ? 'auto' : 'none' }}>
-          <motion.li variants={itemVariants}>
-            <Link to={'#'}>Coming soon</Link>
-          </motion.li>
-          <motion.li variants={itemVariants}>
-            <Link to={'#'}>Coming soon</Link>
-          </motion.li>
-          <motion.li variants={itemVariants}>
-            <Link to={'#'}>Coming soon</Link>
-          </motion.li>
-          <motion.li variants={itemVariants}>
-            <Link to={'#'}>Coming soon</Link>
-          </motion.li>
+          <Link onClick={() => setIsOpen(false)} to={'#'}>
+            <motion.li variants={itemVariants}>Coming soon</motion.li>
+          </Link>
+          <Link onClick={() => setIsOpen(false)} to={'#'}>
+            <motion.li variants={itemVariants}>Coming soon</motion.li>
+          </Link>
+          <Link onClick={() => setIsOpen(false)} to={'#'}>
+            <motion.li variants={itemVariants}>Coming soon</motion.li>
+          </Link>
+          <Link onClick={() => setIsOpen(false)} to={'#'}>
+            <motion.li variants={itemVariants}>Coming soon</motion.li>
+          </Link>
         </motion.ul>
       </motion.nav>
     </div>

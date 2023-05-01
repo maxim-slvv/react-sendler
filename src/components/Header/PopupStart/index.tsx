@@ -79,18 +79,18 @@ export const PopupStart = () => {
             },
           }}
           style={{ pointerEvents: isOpen ? 'auto' : 'none' }}>
-          <motion.li variants={itemVariants}>
-            <Link to={'/newemail'}>Email</Link>
-          </motion.li>
-          <motion.li variants={itemVariants}>
-            <Link to={'/newwhatsapp'}>WhatsApp</Link>
-          </motion.li>
-          <motion.li variants={itemVariants}>
-            <Link to={'#'}>Coming soon</Link>
-          </motion.li>
-          <motion.li variants={itemVariants}>
-            <Link to={'#'}>Coming soon</Link>
-          </motion.li>
+          <Link onClick={() => setIsOpen(false)} to={'/new-email'}>
+            <motion.li variants={itemVariants}>Email</motion.li>
+          </Link>
+          <Link onClick={() => setIsOpen(false)} to={'/new-whatsapp'}>
+            <motion.li variants={itemVariants}>WhatsApp</motion.li>
+          </Link>
+          <Link onClick={() => setIsOpen(false)} to={'#'}>
+            <motion.li variants={itemVariants}>Coming soon</motion.li>
+          </Link>
+          <Link onClick={() => setIsOpen(false)} to={'#'}>
+            <motion.li variants={itemVariants}>Coming soon</motion.li>
+          </Link>
         </motion.ul>
       </motion.nav>
     </div>
