@@ -10,6 +10,7 @@ interface CardSendingsProps {
   state: string;
   type: string;
   num: number;
+  key?: number;
 }
 
 export const CardSendings: React.FC<CardSendingsProps> = (props) => {
