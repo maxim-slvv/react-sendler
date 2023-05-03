@@ -1,23 +1,9 @@
-.actions {
+.box {
+  // margin-top: 20px;
   margin: 0 15px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-  @media (max-width: 1100px) {
-    gap: 5px;
-  }
-}
-
-.form {
-  display: flex;
   flex-direction: column;
-}
-
-.box {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  width: 60%;
   @media (max-width: 1200px) {
     width: 70%;
   }
@@ -32,13 +18,13 @@
     justify-content: center;
   }
   @media (max-width: 650px) {
-    width: 100%;
+    width: auto;
     justify-content: center;
   }
-  textarea {
+  input {
     padding-left: 10px;
     border: 1px solid #ccced1;
-    height: 150px;
+    height: 30px;
     border-radius: 5px;
     margin-bottom: 8px;
   }

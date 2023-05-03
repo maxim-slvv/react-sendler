@@ -18,7 +18,7 @@ export const Contacts: React.FC = () => {
               <CardAction title={'Импортировать контакты'} color={'green'} icon={'download'} />
             </Link>
             <Link to="/new-contact">
-              <CardAction title={`Добавить вручную`} color={'orange'} icon={'add'} />
+              <CardAction title={`Добавить вручную`} color={'darkblue'} icon={'add'} />
             </Link>
           </div>
           <TitleSmall title="Списки" />

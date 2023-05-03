@@ -75,15 +75,15 @@ const Dashboard = () => {
         <div className="__contentSmall">
           <Title title="Обзор" />
           <section className={style.actions}>
-            <Link to="/new-send">
+            <Link to="/new-email">
               <CardAction title={'Создать рассылку'} color={'violet'} icon={'add'} />
             </Link>
-            <Link to="/new-import">
-              <CardAction title={'Импортировать контакты'} color={'green'} icon={'download'} />
-            </Link>
-            <Link to="/new-template">
-              <CardAction title={`Создать шаблон`} color={'orange'} icon={'add'} />
-            </Link>
+            {/* <Link to="/new-import"> */}
+            <CardAction title={'Импортировать контакты'} color={'green'} icon={'download'} />
+            {/* </Link> */}
+            {/* <Link to="/new-template"> */}
+            <CardAction title={`Создать шаблон`} color={'darkblue'} icon={'add'} />
+            {/* </Link> */}
           </section>
 
           <section className={style.sendings}>

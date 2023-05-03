@@ -16,7 +16,7 @@ export const Templates: React.FC = () => {
               <CardAction title={'WhatsApp шаблон'} color={'green'} icon={'add'} />
             </Link>
             <Link to="/new-email-template">
-              <CardAction title={'Email шаблон'} color={'orange'} icon={'add'} />
+              <CardAction title={'Email шаблон'} color={'darkblue'} icon={'add'} />
             </Link>
           </div>
         </div>
