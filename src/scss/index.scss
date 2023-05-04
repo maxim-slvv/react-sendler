@@ -55,10 +55,11 @@ body {
 .container {
 }
 
-.ck.ck-editor__main > .ck-editor__editable {
-  height: 200px;
-}
-
 .ck.ck-toolbar.ck-toolbar_grouping > .ck-toolbar__items {
   flex-wrap: wrap !important;
+}
+
+.ck.ck-editor__main > .ck-editor__editable {
+  height: 200px;
+  margin-bottom: 10px;
 }
