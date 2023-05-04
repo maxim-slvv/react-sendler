@@ -150,6 +150,7 @@ export const Header = () => {
             <PopupUser />
             <PopupMobileInfo />
           </div>
+
           {Burger()}
         </div>
       </header>

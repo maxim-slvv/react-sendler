@@ -78,9 +78,9 @@ const Dashboard = () => {
             <Link to="/new-email">
               <CardAction title={'Создать рассылку'} color={'violet'} icon={'add'} />
             </Link>
-            {/* <Link to="/new-import"> */}
-            <CardAction title={'Импортировать контакты'} color={'green'} icon={'download'} />
-            {/* </Link> */}
+            <Link to="/import">
+              <CardAction title={'Импортировать контакты'} color={'green'} icon={'download'} />
+            </Link>
             {/* <Link to="/new-template"> */}
             <CardAction title={`Создать шаблон`} color={'darkblue'} icon={'add'} />
             {/* </Link> */}

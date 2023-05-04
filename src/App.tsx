@@ -12,6 +12,7 @@ import {
   NotFoundPage,
   NewEmailSendings,
   NewWASendings,
+  ImportContacts,
 } from './pages/index';
 
 import './scss/index.scss';
@@ -32,6 +33,7 @@ function App() {
             <Route path="/templates" element={<Templates />} />
             <Route path="/new-email" element={<NewEmailSendings />} />
             <Route path="/new-whatsapp" element={<NewWASendings />} />
+            <Route path="/import" element={<ImportContacts />} />
           </Route>
         )}
         <Route path="*" element={<NotFoundPage />} />

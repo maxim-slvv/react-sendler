@@ -1,0 +1,38 @@
+.actions {
+  margin: 0 20px 15px;
+  cursor: pointer;
+}
+.dropInitial,
+.dropArea {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  -webkit-user-select: none; /* запретить выделение для webkit браузеров */
+  -moz-user-select: none; /* запретить выделение для Firefox */
+  -ms-user-select: none; /* запретить выделение для IE */
+  user-select: none; /* запретить выделение для остальных браузеров */
+}
+
+.dropInitial {
+  position: relative;
+  border: 1px dashed rgb(29, 183, 70);
+  background-color: lighten(rgba(29, 183, 116, 0.311), 5%);
+  color: #575757;
+  .input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 200px;
+  }
+}
+
+.dropArea {
+  border: 1px dashed rgb(0, 0, 0);
+  background-color: lighten(rgba(29, 183, 116, 0.599), 5%);
+}
