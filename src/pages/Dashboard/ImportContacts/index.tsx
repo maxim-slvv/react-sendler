@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import { Title } from '../../../components/DashBoardComponent/Title';
-import { CardAction } from '../../../components/DashBoardComponent/CardActions';
+
 import style from './ImportContacts.module.scss';
 
 export const ImportContacts: React.FC = () => {

@@ -2,7 +2,6 @@ import React from 'react';
 
 import { useState } from 'react';
 import { motion, Variants } from 'framer-motion';
-import { Link } from 'react-router-dom';
 
 import info from '../../../assets/img/header/info.svg';
 import style from './PopupMobileInfo.module.scss';
