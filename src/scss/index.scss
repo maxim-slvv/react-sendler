@@ -45,6 +45,7 @@ body {
 }
 
 [class*='__contentSmall'] {
+  position: relative;
   width: 1090px;
   padding: 20px;
   @media (max-width: 768px) {
@@ -60,6 +61,19 @@ body {
 }
 
 .ck.ck-editor__main > .ck-editor__editable {
-  height: 200px;
-  margin-bottom: 10px;
+  height: 400px;
+  // margin-bottom: 10px;
+}
+
+.ck-rounded-corners .ck.ck-editor__top .ck-sticky-panel .ck-toolbar {
+  border-radius: 5px 5px 0px 0px !important;
+  border: 1px solid #ccced1 !important;
+  border-bottom: none !important;
+  overflow: hidden !important;
+}
+
+.ck.ck-editor__main > .ck-editor__editable {
+  margin-bottom: 0px !important;
+  border-radius: 0px 0px 5px 5px !important;
+  border: 1px solid #ccced1 !important;
 }

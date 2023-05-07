@@ -6,6 +6,8 @@ import { CardAction } from '../../../../components/DashBoardComponent/CardAction
 import { SubjectInput } from '../../../../components/SubjectInput';
 import { Button } from '../../../../components/DashBoardComponent/Button';
 import { MailEditor } from '../../../../components/DashBoardComponent/MailEditor';
+import { SelectDate } from '../../../../components/DashBoardComponent/SelectDate';
+import { TitleSmall } from '../../../../components/DashBoardComponent/TitleSmall';
 
 export const NewEmailSendings: React.FC = () => {
   return (
@@ -18,8 +20,13 @@ export const NewEmailSendings: React.FC = () => {
             <CardAction title={'Выбрать письмо'} color={'violet'} icon={'add'} />
           </section>
           <div className={style.form}>
-            <SubjectInput />
+            <SubjectInput textarea="no" />
             <MailEditor />
+            TODO Доделать, сделать выбор времени и все стилизовать и адаптировать...
+            <br />
+            дату уже нельзя выбрать старую - сделать то же самое для времени
+            <TitleSmall title="Выберите дату отправки" />
+            <SelectDate />
             <Button text={'Отправить'} color={'green'} />
           </div>
         </div>

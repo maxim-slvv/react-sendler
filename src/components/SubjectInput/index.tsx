@@ -3,7 +3,7 @@ import React from 'react';
 import style from './SubjectInput.module.scss';
 
 interface SubjectInputProps {
-  textarea?: 'yes';
+  textarea?: 'yes' | 'no';
 }
 
 export const SubjectInput: React.FC<SubjectInputProps> = (props) => {
