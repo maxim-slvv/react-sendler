@@ -214,26 +214,26 @@ $popupMarginRight: 8px;
   }
 }
 
-.popup,
-.user {
-  height: 60px;
-  display: flex;
-  align-items: center;
-  border-radius: 15px;
-  padding: 10px;
-  background-color: #dadada27;
-  background-color: red;
-  .arrow {
-    height: 20px;
-    width: 20px;
-    transform: rotate(0deg);
-  }
-  &:hover {
-    background-color: #e7d4e4;
-    transition: transform 0.3s ease;
-    .arrow {
-      transition: transform 0.3s ease;
-      transform: rotate(180deg);
-    }
-  }
-}
+// .popup,
+// .user {
+//   height: 60px;
+//   display: flex;
+//   align-items: center;
+//   border-radius: 15px;
+//   padding: 10px;
+//   background-color: #dadada27;
+//   background-color: red;
+//   .arrow {
+//     height: 20px;
+//     width: 20px;
+//     transform: rotate(0deg);
+//   }
+//   &:hover {
+//     background-color: #e7d4e4;
+//     transition: transform 0.3s ease;
+//     .arrow {
+//       transition: transform 0.3s ease;
+//       transform: rotate(180deg);
+//     }
+//   }
+// }

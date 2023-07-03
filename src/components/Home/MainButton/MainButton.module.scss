@@ -1,0 +1,15 @@
+.button {
+  border: 0;
+  border-radius: 14px;
+  padding: 15px 32px;
+  width: auto;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform ease-in-out 0.1s;
+  &:active {
+    transition: transform ease-in-out 0.1s;
+    transform: translateY(1px);
+  }
+}
