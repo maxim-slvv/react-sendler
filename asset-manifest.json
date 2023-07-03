@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/react-sendler/static/css/main.92d74be3.css",
-    "main.js": "/react-sendler/static/js/main.2fa1c363.js",
+    "main.css": "/react-sendler/static/css/main.e187579a.css",
+    "main.js": "/react-sendler/static/js/main.4dacd0b3.js",
+    "static/media/landing_bg1.png": "/react-sendler/static/media/landing_bg1.52c8989b6ed9ac75f8db.png",
+    "static/media/illustration.png": "/react-sendler/static/media/illustration.0594ed7b552be01b91b9.png",
     "index.html": "/react-sendler/index.html",
     "static/media/logo.svg": "/react-sendler/static/media/logo.b992b78822cde2be8972ad246c42a9e1.svg",
     "static/media/info.svg": "/react-sendler/static/media/info.0d5196daa961dca26c8970276ea84b04.svg",
-    "main.92d74be3.css.map": "/react-sendler/static/css/main.92d74be3.css.map",
-    "main.2fa1c363.js.map": "/react-sendler/static/js/main.2fa1c363.js.map"
+    "main.e187579a.css.map": "/react-sendler/static/css/main.e187579a.css.map",
+    "main.4dacd0b3.js.map": "/react-sendler/static/js/main.4dacd0b3.js.map"
   },
   "entrypoints": [
-    "static/css/main.92d74be3.css",
-    "static/js/main.2fa1c363.js"
+    "static/css/main.e187579a.css",
+    "static/js/main.4dacd0b3.js"
   ]
 }
