@@ -34,7 +34,7 @@ const Home = () => {
           </header>
         </div>
         <div>
-          <div className={style.container}>
+          <div className={style.containerNotRight}>
             <main className={style.main}>
               <div className={style.title}>
                 <h1>Крупная рекламная сеть</h1>
