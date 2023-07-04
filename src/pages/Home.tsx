@@ -20,14 +20,8 @@ const Home = () => {
                 <Link to={'/'} className={style.logoImg}>
                   <img src={logo} alt="" />
                 </Link>
-                <Link className={style.navLink} to={'/'}>
-                  <HeaderButton color="white" text="Войти" />
-                </Link>
-                <Link className={style.navLink} to={'/'}>
-                  <HeaderButton color="white" text="Регистрация" />
-                </Link>
                 <Link className={style.navLink} to={'/dashboard'}>
-                  <HeaderButton color="white" text="Личный кабинет" />
+                  <HeaderButton color="white" text="Войти" />
                 </Link>
               </nav>
             </div>
@@ -43,6 +37,9 @@ const Home = () => {
                   объединяющая вебмастеров, арбитражников, владельцев сайтов и приложений,
                   рекламодателей
                 </p>
+                <div className={style.pictureHidden}>
+                  <img src={illustration} alt="" />
+                </div>
                 <MainButton color="darkblue" text="Зарегистрироваться" />
               </div>
               <div className={style.picture}>
