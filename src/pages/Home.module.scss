@@ -3,7 +3,7 @@
   margin: 0 auto;
   overflow-x: hidden;
   overflow-y: hidden;
-  padding-bottom: 150px;
+  padding-bottom: 80px;
 }
 .container,
 .containerNotRight {
@@ -131,20 +131,21 @@
   margin-top: 45px;
   @media (max-width: 430px) {
     margin-top: 10px;
-    zoom: 80%;
+    transform: scale(0.8);
+    transform-origin: 50% 0;
     display: flex;
     justify-content: center;
   }
   @media (max-width: 360px) {
-    margin-top: 10px;
-    zoom: 70%;
+    transform: scale(0.75);
+    transform-origin: 50% 0;
     display: flex;
     justify-content: center;
   }
   display: flex;
   justify-content: space-between;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  // overflow-x: hidden;
+  // overflow-y: hidden;
   .title {
     flex: 1 1 auto;
     max-width: 432px;
@@ -152,7 +153,8 @@
       flex: 1 0 340px;
     }
     @media (max-width: 550px) {
-      zoom: 80%;
+      transform: scale(0.8);
+      transform-origin: 50% 0;
     }
     @media (max-width: 540px) {
     }
@@ -160,7 +162,8 @@
       display: flex;
       flex-direction: column;
       text-align: center;
-      zoom: 100%;
+      transform: scale(1);
+      transform-origin: 50% 0;
     }
     * {
       margin-bottom: 48px;
@@ -253,9 +256,11 @@
       @media (max-width: 550px) {
         width: 350px;
       }
+      @media (max-width: 460px) {
+        font-size: calc($p - 40%);
+      }
       @media (max-width: 430px) {
         font-size: calc($p - 25%);
-        color: white;
         margin-bottom: 10px;
         width: 100%;
       }
@@ -309,7 +314,8 @@
         margin-right: -230px;
       }
       @media (max-width: 550px) {
-        zoom: 80%;
+        transform: scale(0.8);
+        transform-origin: 50% 0;
         margin-right: -150px;
         max-height: 290px;
       }
