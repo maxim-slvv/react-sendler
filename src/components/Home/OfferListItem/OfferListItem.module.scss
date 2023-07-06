@@ -1,34 +1,71 @@
+$h1: 52px;
+$h2: 24px;
+$p: 18px;
+
 .listItem {
   position: relative;
-  $h1: 24px;
-  $p: 18px;
   display: flex;
   padding: 25px 40px;
   border-radius: 18px;
-  flex: 1 0 auto;
-  background-color: #d2ccfb;
+  background-color: #ffffff;
+  border: 1px solid #713ee6;
+  height: 100%;
+  width: 80%;
+  @media (max-width: 1300px) {
+    flex-direction: column-reverse;
+    width: 312px;
+    // width: 50%;
+    // gap: 15px;
+  }
+
+  @media (max-width: 1300px) {
+  }
+  @media (max-width: 1100px) {
+    //*добавить позже
+    // width: 50%;
+    // padding: 15px 20px;
+  }
   .star {
     position: absolute;
     top: 15px;
-    left: -23px;
+    left: -24px;
   }
   .text {
     padding-right: 48px;
+    @media (max-width: 1300px) {
+      padding-right: 0px;
+    }
     align-self: center;
     justify-content: center;
     vertical-align: middle;
     //! при адаптиве удалить flex если будет мешать
     flex: 1 0 auto;
-    h1 {
-      font-size: $h1;
+    h2 {
+      font-size: $h2;
       padding-bottom: 8px;
+      color: #713ee6;
+      @media (max-width: 1300px) {
+        text-align: center;
+      }
+      @media (max-width: 1300px) {
+        font-size: calc($h2 - 20%);
+      }
     }
     p {
       font-size: $p;
+      color: #2d2d2d;
+      @media (max-width: 1300px) {
+        text-align: center;
+      }
     }
   }
   .picture {
     display: flex;
     justify-content: center;
+    height: 85px;
+
+    @media (max-width: 1300px) {
+      margin-bottom: 15px;
+    }
   }
 }

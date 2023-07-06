@@ -9,7 +9,7 @@ import img4 from '../../../assets/img/home/offer/list4.svg';
 import star from '../../../assets/img/home/offer/star.svg';
 
 interface ButtonProps {
-  h1: string;
+  h2: string;
   p: string;
   img: number;
 }
@@ -22,7 +22,7 @@ export const OfferListItem: React.FC<ButtonProps> = (props) => {
     >
       <img className={style.star} src={star} alt="" />
       <div className={style.text}>
-        <h1>{props.h1}</h1>
+        <h2>{props.h2}</h2>
         <p> {props.p}</p>
       </div>
       <div className={style.picture}>

@@ -1,3 +1,7 @@
+$h1: 52px;
+$h2: 24px;
+$p: 16px;
+
 .box {
   max-width: 1920px;
   margin: 0 auto;
@@ -159,7 +163,7 @@
   justify-content: space-between;
   // overflow-x: hidden;
   // overflow-y: hidden;
-  //!---------------------------INTRO---------------------------
+  //*---------------------------INTRO---------------------------
   .title {
     flex: 1 1 auto;
     max-width: 432px;
@@ -189,9 +193,7 @@
         margin-bottom: 0px;
       }
     }
-    $h1: 52px;
-    $h2: 24px;
-    $p: 16px;
+
     h1 {
       line-height: 60px;
       font-size: $h1;
@@ -344,31 +346,87 @@
     }
   }
 }
-//!---------------------------OFFER---------------------------
+//*---------------------------OFFER---------------------------
 .offer {
+  height: 750px;
   padding-top: 90px;
   display: flex;
   .container {
     display: flex;
     width: 100%;
-    margin: 0;
   }
 
   .offerBox {
     //!TODO сделать появление отсроченным? или использовать либу
     // background: url(../assets/img/home/header/landing_bg3.png);
+    position: relative;
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: flex-end;
+
     .picture {
+      position: absolute;
+      content: '';
+      top: -85px;
+      left: -340px;
       padding-left: 90px;
-      //!Тут менять размер картинки
-      // width: 500px;
-      // height: 400px;
+
+      @media (max-width: 1300px) {
+        left: -325px;
+        height: calc(667px - 5%);
+        width: calc(715px + 5%);
+      }
+      @media (max-width: 1260px) {
+        background-color: red;
+      }
       img {
         width: 100%;
         height: 100%;
+      }
+    }
+    .list {
+      position: absolute;
+      content: '';
+      right: 0%;
+      top: 0;
+
+      width: 60%;
+      @media (max-width: 1300px) {
+        width: 470px;
+        right: 170px;
+        display: grid;
+        grid-template-columns: repeat(2, 70%);
+        grid-template-rows: repeat(2, 50%);
+        grid-column-gap: 0px;
+        grid-row-gap: 15px;
+      }
+
+      > * {
+        margin: 8px 8px;
+      }
+      $listSpace: -30px;
+      > :nth-child(1) {
+        margin-left: calc($listSpace + 8%);
+      }
+      > :nth-child(2) {
+        margin-left: calc($listSpace + 14%);
+      }
+      > :nth-child(3) {
+        margin-left: calc($listSpace + 18%);
+      }
+      > :nth-child(4) {
+        margin-left: calc($listSpace + 24%);
+      }
+
+      > :nth-child(1),
+      :nth-child(2),
+      :nth-child(3),
+      :nth-child(4) {
+        @media (max-width: 1300px) {
+          margin-left: 0;
+        }
       }
     }
   }

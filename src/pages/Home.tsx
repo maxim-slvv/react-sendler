@@ -59,11 +59,13 @@ const Home = () => {
                 <img src={illustration2} alt="" />
               </div>
               <div className={style.list}>
-                <OfferListItem h1="Отличную монетизацию" p="Для сайтов и приложений" img={1} />
-                <OfferListItem h1="Отличную монетизацию" p="Для сайтов и приложений" img={2} />
-                <OfferListItem h1="Отличную монетизацию" p="Для сайтов и приложений" img={3} />
-                <OfferListItem h1="Отличную монетизацию" p="Для сайтов и приложений" img={4} />
+                <OfferListItem h2="WhatsApp, Email рассылка" p="Для вашего бизнеса" img={1} />
+                <OfferListItem h2="Множество готовых шаблонов" p="Для быстрого начала" img={4} />
+
+                <OfferListItem h2="Качественную рассылку" p="Для повышения охвата" img={3} />
+                <OfferListItem h2="Планирование отправки" p="Для вашего удобства" img={2} />
               </div>
+              <div className={style.list}></div>
             </div>
           </div>
         </div>
