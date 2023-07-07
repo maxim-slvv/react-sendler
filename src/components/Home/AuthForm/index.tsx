@@ -32,6 +32,8 @@ export const AuthForm: React.FC<AuthFormProps> = (props) => {
           <input type="password" placeholder="Пароль" />
           <input type="password" placeholder="Подтвердите пароль" />
         </div>
+        //TODO: Создать форму регистрации для сабмита по button //TODO: передать параметры в Redux
+        {/* //TODO ------------------dispatch(fetchPizzas({ page, category, sortBy, order, search })); */}
         <MainButton color="darkblue" text="Зарегистрироваться" />
       </>
     );
