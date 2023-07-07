@@ -20,7 +20,6 @@ export const SelectDate = () => {
     if (modifiers.disabled) {
       return;
     }
-    console.log(day);
     setSelectedDay(day);
   }
 

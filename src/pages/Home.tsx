@@ -1,8 +1,14 @@
+import React from 'react';
+
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { authState, setAuthOpen } from '../redux/slices/HomeAuthClick';
 
 import { HeaderButton } from '../components/Home/HeaderButton';
 import { MainButton } from '../components/Home/MainButton';
 import { OfferListItem } from '../components/Home/OfferListItem';
+import { AuthForm } from '../components/Home/AuthForm';
 
 import style from './Home.module.scss';
 import logo from '../assets/img/header/logo.svg';
@@ -12,8 +18,18 @@ import illustration from '../assets/img/home/header/illustration.png';
 import illustration2 from '../assets/img/home/header/illustration2.png';
 
 const Home = () => {
+  const dispatch = useDispatch();
+  const authOpen = useSelector(authState);
+  const authClickClose = () => {
+    dispatch(setAuthOpen());
+  };
+
   return (
     <>
+      <div className={style.auth} style={authOpen ? {} : { display: 'none' }}>
+        <AuthForm type="reg" />
+      </div>
+
       <div className={style.box}>
         <div className={style.bgTop}>
           <img className={style.bgImgOne} src={bgOne} alt="" />
@@ -44,7 +60,9 @@ const Home = () => {
               <div className={style.pictureHidden}>
                 <img src={illustration} alt="" />
               </div>
-              <MainButton color="darkblue" text="Зарегистрироваться" />
+              <div onClick={() => authClickClose()} className={style.button}>
+                <MainButton color="darkblue" text="Зарегистрироваться" />
+              </div>
             </div>
             <div className={style.picture}>
               <img src={illustration} alt="" />
@@ -61,7 +79,6 @@ const Home = () => {
               <div className={style.list}>
                 <OfferListItem h2="WhatsApp, Email рассылка" p="Для вашего бизнеса" img={1} />
                 <OfferListItem h2="Множество готовых шаблонов" p="Для быстрого начала" img={4} />
-
                 <OfferListItem h2="Качественную рассылку" p="Для повышения охвата" img={3} />
                 <OfferListItem h2="Планирование отправки" p="Для вашего удобства" img={2} />
               </div>

@@ -2,6 +2,20 @@ $h1: 52px;
 $h2: 24px;
 $p: 16px;
 
+.auth {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  background-color: rgba(75, 75, 76, 0.432);
+  height: 100%;
+  width: 100%;
+  // display: none;
+}
+
 .box {
   max-width: 1920px;
   margin: 0 auto;

@@ -5,6 +5,8 @@ import style from './MainButton.module.scss';
 
 interface ButtonProps {
   color: 'violet' | 'green' | 'darkblue' | 'white';
+  //?__________________________________________________________заметка
+  className?: string;
   text: string;
 }
 
