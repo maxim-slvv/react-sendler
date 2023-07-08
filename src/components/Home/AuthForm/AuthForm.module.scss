@@ -14,40 +14,62 @@ $p: 16px;
     border-radius: 15px;
     padding: 13px;
   }
-}
-.AuthForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 10;
-  border-radius: 30px;
-  background-color: rgb(255, 255, 255);
-  padding: 50px 40px 40px;
-  width: 560px;
-  height: 520px;
 
-  h3 {
-    font-size: $h3;
-    color: #713ee6;
-    margin-bottom: 40px;
-  }
-  .authForms {
+  .AuthForm {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    margin-bottom: 30px;
-    input {
+    align-items: center;
+    z-index: 10;
+    border-radius: 30px;
+    background-color: rgb(255, 255, 255);
+    padding: 50px 40px 40px;
+    width: 560px;
+    height: 520px;
+
+    h3 {
+      font-size: $h3;
+      color: #713ee6;
+      margin-bottom: 40px;
+    }
+    .authForms {
       display: flex;
-      padding: 23px 15px;
-      height: 45px;
-      border: 0px;
-      border-bottom: 2px #eef0f6 solid;
-      &:not(:last-of-type) {
-        margin-bottom: 5px;
-      }
-      & ::placeholder {
-        color: #a5a5a4;
+      flex-direction: column;
+      width: 100%;
+
+      .inputWrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: relative;
+        p {
+          position: absolute;
+          top: -15px;
+          left: 10px;
+          color: red;
+          font-size: 12px;
+        }
+        &:not(:last-of-type) {
+          margin-bottom: 5px;
+        }
+        input {
+          display: flex;
+          padding: 23px 15px;
+          height: 45px;
+          border: 1px #eef0f6 solid;
+          border-radius: 15px;
+          border-bottom: 2px #eef0f6 solid;
+
+          & ::placeholder {
+            color: #a5a5a4;
+          }
+        }
       }
     }
+  }
+
+  .sendButton {
+    border: 0px;
+    margin-top: 30px;
+    opacity: 0.6;
   }
 }

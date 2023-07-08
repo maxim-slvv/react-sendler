@@ -3,7 +3,7 @@ $h2: 24px;
 $p: 16px;
 
 .auth {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
@@ -13,7 +13,6 @@ $p: 16px;
   background-color: rgba(75, 75, 76, 0.432);
   height: 100%;
   width: 100%;
-  // display: none;
 }
 
 .box {

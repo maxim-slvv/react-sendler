@@ -23,6 +23,19 @@ const Home = () => {
   const authClickClose = () => {
     dispatch(setAuthOpen());
   };
+  //*запрет прокрутки экрана при открытии меню регистрации и авторизации
+  const toggleScrollLock = React.useCallback(() => {
+    const bodyElement = document.querySelector('body');
+    if (authOpen) {
+      bodyElement.style.overflow = 'hidden';
+    } else {
+      bodyElement.style.overflow = '';
+    }
+  }, [authOpen]);
+
+  React.useEffect(() => {
+    toggleScrollLock();
+  }, [authOpen, toggleScrollLock]);
 
   return (
     <>
@@ -30,7 +43,7 @@ const Home = () => {
         <AuthForm type="reg" />
       </div>
 
-      <div className={style.box}>
+      <div className={style.box} style={authOpen ? {} : { overflow: 'hidden' }}>
         <div className={style.bgTop}>
           <img className={style.bgImgOne} src={bgOne} alt="" />
           <img className={style.bgImgTwo} src={bgTwo} alt="" />

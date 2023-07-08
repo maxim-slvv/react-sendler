@@ -5,25 +5,6 @@ import { RootState } from '../../store';
 
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-//TODO: выяснить тип
-type FetchPizzasArgs = Record<string, string>;
-
-// export const fetchPizzas = createAsyncThunk<UserCreateParams, FetchPizzasArgs>(
-//   'pizzas/fetchPizzasStatus',
-
-//   async (params) => {
-//     const { email, password, confirm_password, username, phone, field_of_activity } = params;
-//     const response = await axios.post<UserCreateParams>('http://localhost:8000/api/v1/user/reg/ ', {
-//       email: 'andrey3kulagin@gmail.com',
-//       password: 'qwer1234',
-//       confirm_password: 'qwer1234',
-//       username: 'andrey3kulagin',
-//       phone: '89863272323',
-//       field_of_activity: 'услуги логистики с Китаем',
-//     });
-//   },
-// );
-
 export type UserCreateParams = {
   email: string;
   password: string;
@@ -32,6 +13,29 @@ export type UserCreateParams = {
   phone: string;
   field_of_activity: string;
 };
+
+interface ServerData {
+  email: string;
+  username: string;
+  phone: string;
+  field_of_activity: string;
+}
+
+export const requestUserCreate = createAsyncThunk(
+  'pizzas/fetchPizzasStatus',
+  async (params: UserCreateParams) => {
+    const { email, password, confirm_password, username, phone, field_of_activity } = params;
+    const { data } = await axios.post('http://localhost:8000/user/create', {
+      email,
+      password,
+      confirm_password,
+      username,
+      phone,
+      field_of_activity,
+    });
+    return data as ServerData;
+  },
+);
 
 //? JSON----------------------------
 //* {

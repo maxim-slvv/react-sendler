@@ -5,9 +5,9 @@ import style from './MainButton.module.scss';
 
 interface ButtonProps {
   color: 'violet' | 'green' | 'darkblue' | 'white';
-  //?__________________________________________________________заметка
-  className?: string;
   text: string;
+  // //?__________________________________________________________заметка
+  // className?: string;
 }
 
 export const MainButton: React.FC<ButtonProps> = (props) => {
