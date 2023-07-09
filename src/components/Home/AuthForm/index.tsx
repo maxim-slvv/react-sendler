@@ -2,8 +2,8 @@ import React from 'react';
 // import { useForm } from 'react-hook-form';
 
 import { AppDispatch } from '../../../redux/store';
-import { useSelector, useDispatch } from 'react-redux';
-import { authState, setAuthClose } from '../../../redux/slices/HomeAuthClick';
+import { useDispatch } from 'react-redux';
+import { setAuthClose } from '../../../redux/slices/HomeAuthClick';
 import { UserCreateParams, requestUserCreate } from '../../../redux/slices/user/UserCreate';
 
 import { MainButton } from '../MainButton';
@@ -135,6 +135,9 @@ export const AuthForm: React.FC<AuthFormProps> = (props) => {
       setFormValid(true);
     }
   }, [emailError, passwordError, password2Error]);
+
+  //TODO: в случае 201 - очищать форму, в случае 400 - показывать ошибку
+  //TODO: что email занят, телефон уже используется, имя пользователя занято
 
   const reg = () => {
     return (
