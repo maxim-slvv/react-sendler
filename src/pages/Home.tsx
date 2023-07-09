@@ -19,31 +19,38 @@ import illustration2 from '../assets/img/home/header/illustration2.png';
 
 const Home = () => {
   const dispatch = useDispatch();
-  const authOpen = useSelector(authState);
-  const authClickClose = () => {
+  const isAuthOpen = useSelector(authState);
+
+  const [authType, setAuthType] = React.useState('reg');
+  const regClickOpen = () => {
+    setAuthType('reg');
+    dispatch(setAuthOpen());
+  };
+  const authClickOpen = () => {
+    setAuthType('auth');
     dispatch(setAuthOpen());
   };
   //*запрет прокрутки экрана при открытии меню регистрации и авторизации
   const toggleScrollLock = React.useCallback(() => {
     const bodyElement = document.querySelector('body');
-    if (authOpen) {
+    if (isAuthOpen) {
       bodyElement.style.overflow = 'hidden';
     } else {
       bodyElement.style.overflow = '';
     }
-  }, [authOpen]);
+  }, [isAuthOpen]);
 
   React.useEffect(() => {
     toggleScrollLock();
-  }, [authOpen, toggleScrollLock]);
+  }, [isAuthOpen, toggleScrollLock]);
 
   return (
     <>
-      <div className={style.auth} style={authOpen ? {} : { display: 'none' }}>
-        <AuthForm type="reg" />
+      <div className={style.auth} style={isAuthOpen ? {} : { display: 'none' }}>
+        <AuthForm type={authType} />
       </div>
 
-      <div className={style.box} style={authOpen ? {} : { overflow: 'hidden' }}>
+      <div className={style.box} style={isAuthOpen ? {} : { overflow: 'hidden' }}>
         <div className={style.bgTop}>
           <img className={style.bgImgOne} src={bgOne} alt="" />
           <img className={style.bgImgTwo} src={bgTwo} alt="" />
@@ -53,9 +60,14 @@ const Home = () => {
                 <Link to={'/'} className={style.logoImg}>
                   <img src={logo} alt="" />
                 </Link>
-                <Link className={style.navLink} to={'/dashboard'}>
-                  <HeaderButton color="white" text="Войти" />
+                <Link className={style.navLink} style={{ paddingRight: '15px' }} to={'/dashboard'}>
+                  <HeaderButton color="green" text="войти как ADMIN" />
                 </Link>
+                <button
+                  style={{ border: '0px', backgroundColor: 'inherit' }}
+                  onClick={() => authClickOpen()}>
+                  <HeaderButton color="white" text="Войти" />
+                </button>
               </nav>
             </div>
           </header>
@@ -73,7 +85,7 @@ const Home = () => {
               <div className={style.pictureHidden}>
                 <img src={illustration} alt="" />
               </div>
-              <div onClick={() => authClickClose()} className={style.button}>
+              <div onClick={() => regClickOpen()} className={style.button}>
                 <MainButton color="darkblue" text="Зарегистрироваться" />
               </div>
             </div>
@@ -95,7 +107,6 @@ const Home = () => {
                 <OfferListItem h2="Качественную рассылку" p="Для повышения охвата" img={3} />
                 <OfferListItem h2="Планирование отправки" p="Для вашего удобства" img={2} />
               </div>
-              <div className={style.list}></div>
             </div>
           </div>
         </div>

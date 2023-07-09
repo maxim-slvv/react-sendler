@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../../store';
 
@@ -14,7 +13,7 @@ export type UserCreateParams = {
   field_of_activity?: string;
 };
 
-//TODO: проверить что может приходить с сервера
+//TODO: проверить что может приходит с сервера
 interface ServerData {
   email?: string;
   username?: string;
@@ -38,25 +37,6 @@ export const requestUserCreate = createAsyncThunk(
   },
 );
 
-//? JSON----------------------------
-//* {
-//*    "email": "andrey3kulagin@gmail.com",
-//*    "password": "qwer1234",
-//*    "confirm_password": "qwer1234",
-//*    "username": "andrey3kulagin",
-//*    "phone": "89863272323",
-//*    "field_of_activity": "услуги логистики с Китаем"
-//*  }
-//? Array----------------------------
-//* {
-//*     "email": "andrey3kulagin@gmail.com",
-// *    "password": "qwer1234",
-//*     "confirm_password": "qwer1234",
-//  *   "username": "andrey3kulagin",
-//*     "phone": "89863272323",
-//*     "field_of_activity": "услуги логистики с Китаем"
-//*   }
-
 export interface UserCreateType {
   isAuthOpen: boolean;
 }
@@ -69,6 +49,7 @@ export const UserCreate = createSlice({
   name: 'UserCreate',
   initialState,
   reducers: {
+    //для глобального открытия окна
     setAuthOpen: (state) => {
       state.isAuthOpen = true;
     },
