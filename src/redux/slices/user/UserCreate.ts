@@ -25,7 +25,7 @@ export const requestUserCreate = createAsyncThunk(
   'pizzas/fetchPizzasStatus',
   async (params: UserCreateParams) => {
     const { email, password, confirm_password, username, phone, field_of_activity } = params;
-    const { data } = await axios.post('http://localhost:8000/user/create', {
+    const { data } = await axios.post('api/user/create', {
       email,
       password,
       confirm_password,
