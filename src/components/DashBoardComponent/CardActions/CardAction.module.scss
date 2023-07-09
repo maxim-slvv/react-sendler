@@ -8,6 +8,7 @@
   max-width: 326px;
   height: 202px;
   width: 160px;
+  // TODO сделать вместо zoom - transform translate
   @media (max-width: 550px) {
     zoom: 80%;
   }
