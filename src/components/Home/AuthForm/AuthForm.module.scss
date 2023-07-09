@@ -24,7 +24,7 @@ $p: 16px;
     background-color: rgb(255, 255, 255);
     padding: 50px 40px 40px;
     width: 560px;
-    height: 520px;
+    height: 550px;
 
     h3 {
       font-size: $h3;
@@ -41,15 +41,18 @@ $p: 16px;
         flex-direction: column;
         width: 100%;
         position: relative;
-        p {
+
+        .errorMessage {
           position: absolute;
           top: -15px;
-          left: 10px;
-          color: red;
+          left: 16px;
+          // transform: translateX(-50%);
           font-size: 12px;
+          color: red;
         }
+
         &:not(:last-of-type) {
-          margin-bottom: 5px;
+          margin-bottom: 15px;
         }
         input {
           display: flex;
@@ -70,6 +73,5 @@ $p: 16px;
   .sendButton {
     border: 0px;
     margin-top: 30px;
-    opacity: 0.6;
   }
 }

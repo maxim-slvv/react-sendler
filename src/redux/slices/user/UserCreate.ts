@@ -11,14 +11,15 @@ export type UserCreateParams = {
   confirm_password: string;
   username: string;
   phone: string;
-  field_of_activity: string;
+  field_of_activity?: string;
 };
 
+//TODO: проверить что может приходить с сервера
 interface ServerData {
-  email: string;
-  username: string;
-  phone: string;
-  field_of_activity: string;
+  email?: string;
+  username?: string;
+  phone?: string;
+  field_of_activity?: string;
 }
 
 export const requestUserCreate = createAsyncThunk(

@@ -4,7 +4,7 @@ import React from 'react';
 import { AppDispatch } from '../../../redux/store';
 import { useSelector, useDispatch } from 'react-redux';
 import { authState, setAuthClose } from '../../../redux/slices/HomeAuthClick';
-import { requestUserCreate } from '../../../redux/slices/user/UserCreate';
+import { UserCreateParams, requestUserCreate } from '../../../redux/slices/user/UserCreate';
 
 import { MainButton } from '../MainButton';
 import style from './AuthForm.module.scss';
@@ -16,37 +16,46 @@ interface AuthFormProps {
 
 export const AuthForm: React.FC<AuthFormProps> = (props) => {
   const dispatch = useDispatch<AppDispatch>();
-  const isAuthOpen = useSelector(authState);
 
   const authClickClose = () => {
     dispatch(setAuthClose());
   };
 
-  let UserCreateFunc = () => {
-    dispatch(
-      requestUserCreate({
-        email: 'andrey3kulagin@gmail.com',
-        password: 'qwer1234',
-        confirm_password: 'qwer1234',
-        username: 'andrey3kulagin',
-        phone: '89863272323',
-        field_of_activity: 'услуги логистики с Китаем',
-      }),
-    );
-  };
-
-  //*-----------------------ФОРМА АВТОРИЗАЦИИ-----------------------*
+  //!-----------------------ФОРМА АВТОРИЗАЦИИ-----------------------*
   const auth = () => {
     return <>авторизация</>;
   };
-  //*-----------------------ФОРМА РЕГИСТРАЦИИ-----------------------*
-  // const [formData, setFormData] = React.useState({});
+
+  //!-----------------------ФОРМА РЕГИСТРАЦИИ-----------------------*
+  let UserCreateFunc = () => {
+    dispatch(
+      requestUserCreate({
+        email: emailData,
+        password: passwordData,
+        confirm_password: password2Data,
+        username: nameData,
+        phone: numberData,
+      } as UserCreateParams),
+    );
+  };
   //?---------------Данные форм
   const [emailData, setEmailData] = React.useState('');
   const [nameData, setNameData] = React.useState('');
   const [numberData, setNumberData] = React.useState('');
   const [passwordData, setPasswordData] = React.useState('');
   const [password2Data, setPassword2Data] = React.useState('');
+
+  //?---------------Состояния
+  const [emailDirty, setEmailDirty] = React.useState(false);
+  const [passwordDirty, setPasswordDirty] = React.useState(false);
+  const [password2Dirty, setPassword2Dirty] = React.useState(false);
+  const [formValid, setFormValid] = React.useState(false);
+
+  //?---------------Параметры ошибки
+  const [emailError, setEmailError] = React.useState(' ');
+  const [passwordError, setPasswordError] = React.useState(' ');
+  const [password2Error, setPassword2Error] = React.useState(' ');
+
   //?---------------При Изменении данных поля
   const emailHandler = (e) => {
     setEmailData(e.target.value);
@@ -58,35 +67,74 @@ export const AuthForm: React.FC<AuthFormProps> = (props) => {
       setEmailError('');
     }
   };
-  //?---------------Состояния
-  const [emailDirty, setEmailDirty] = React.useState(false);
-  const [nameDirty, setNameDirty] = React.useState(false);
-  const [numberDirty, setNumberDirty] = React.useState(false);
-  const [passwordDirty, setPasswordDirty] = React.useState(false);
-  const [password2Dirty, setPassword2Dirty] = React.useState(false);
-  //?---------------Обязательные параметры
-  const [emailError, setEmailError] = React.useState('Email не может быть пустым');
+
+  const nameHandler = (e) => {
+    setNameData(e.target.value);
+  };
+  const numberHandler = (e) => {
+    setNumberData(e.target.value);
+  };
+
+  const passwordHandler = (e) => {
+    setPasswordData(e.target.value);
+    if (e.target.value.length < 8 || e.target.value.length > 20) {
+      setPasswordError('Пароль должен быть длинее 8 символов и не более 20');
+      if (!e.target.value) {
+        setPasswordError('Пароль не может быть пустым');
+      }
+    } else {
+      setPasswordError('');
+    }
+  };
+
+  const password2Handler = (e) => {
+    setPassword2Data(e.target.value);
+    if (!e.target.value) {
+      setPassword2Error('Пароль не может быть пустым');
+    } else {
+      setPassword2Error('');
+    }
+  };
+
+  React.useEffect(() => {
+    if (passwordData !== password2Data) {
+      setPassword2Error('Пароли не совпадают');
+    } else {
+      setPassword2Error('');
+    }
+  }, [passwordData, password2Data]);
+
   //?---------------Blur - когда убрали курсор
   const blurHandler = (e) => {
     switch (e.target.name) {
       case 'email':
         setEmailDirty(true);
-
-        break;
-      case 'name':
-        setNameDirty(true);
-        break;
-      case 'number':
-        setNumberDirty(true);
+        if (!emailData) {
+          setEmailError('Email не может быть пустым');
+        }
         break;
       case 'password':
         setPasswordDirty(true);
+        if (!passwordData) {
+          setPasswordError('Пароль не может быть пустым');
+        }
         break;
       case 'password2':
         setPassword2Dirty(true);
+        if (!password2Data) {
+          setPassword2Error('Пароль не может быть пустым');
+        }
         break;
     }
   };
+
+  React.useEffect(() => {
+    if (emailError || passwordError || password2Error) {
+      setFormValid(false);
+    } else {
+      setFormValid(true);
+    }
+  }, [emailError, passwordError, password2Error]);
 
   const reg = () => {
     return (
@@ -94,57 +142,69 @@ export const AuthForm: React.FC<AuthFormProps> = (props) => {
         <h3>Регистрация</h3>
         <div className={style.authForms}>
           <div className={style.inputWrapper}>
-            {/*//? если мы нажали на email и в нем есть ошибка то мы создаем блок с ошибкой */}
-            {/*//TODO: спозиционировать надпись */}
-            {emailDirty && emailError && <div style={{ color: 'red' }}>{emailError}</div>}
+            {emailDirty && emailError && <div className={style.errorMessage}>{emailError}</div>}
             <input
               onChange={(e) => emailHandler(e)}
               value={emailData}
               onBlur={(e) => blurHandler(e)}
               name="email"
-              style={{ border: '1px solid red' }}
+              style={emailDirty && emailError ? { border: '1px solid red' } : {}}
               type="email"
               placeholder="Email"
             />
           </div>
           <div className={style.inputWrapper}>
             <input
+              onChange={(e) => nameHandler(e)}
               onBlur={(e) => blurHandler(e)}
               name="name"
-              style={{}}
               type="text"
-              placeholder="Имя пользователя"
+              placeholder="Имя пользователя (не обязательно)"
             />
           </div>
           <div className={style.inputWrapper}>
             <input
+              onChange={(e) => numberHandler(e)}
               onBlur={(e) => blurHandler(e)}
               name="number"
-              style={{}}
               type="number"
-              placeholder="Номер телефона"
+              placeholder="Номер телефона (не обязательно)"
             />
           </div>
           <div className={style.inputWrapper}>
+            {passwordDirty && passwordError && (
+              <div className={style.errorMessage}>{passwordError}</div>
+            )}
             <input
+              onChange={(e) => passwordHandler(e)}
               onBlur={(e) => blurHandler(e)}
               name="password"
-              style={{}}
+              style={passwordDirty && passwordError ? { border: '1px solid red' } : {}}
               type="password"
               placeholder="Пароль"
+              maxLength={20}
             />
           </div>
           <div className={style.inputWrapper}>
+            {password2Dirty && password2Error && (
+              <div className={style.errorMessage}>{password2Error}</div>
+            )}
             <input
+              onChange={(e) => password2Handler(e)}
               onBlur={(e) => blurHandler(e)}
               name="password2"
-              style={{}}
+              style={password2Dirty && password2Error ? { border: '1px solid red' } : {}}
               type="password"
               placeholder="Подтвердите пароль"
+              maxLength={20}
             />
           </div>
         </div>
-        <button className={style.sendButton} onClick={() => UserCreateFunc()}>
+        <button
+          disabled={!formValid}
+          style={!formValid ? { opacity: '0.6' } : {}}
+          className={style.sendButton}
+          onClick={() => UserCreateFunc()}>
           <MainButton color="darkblue" text="Зарегистрироваться" />
         </button>
       </>
