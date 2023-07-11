@@ -19,7 +19,7 @@ export const requestGetToken = createAsyncThunk(
   'pizzas/fetchPizzasStatus',
   async (params: tokenParams) => {
     const { email, password } = params;
-    const { data } = await axios.post('api/token', {
+    const { data } = await axios.post('http://localhost:8000/api/v1/token', {
       email,
       password,
     });

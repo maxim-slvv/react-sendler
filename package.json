@@ -1,7 +1,6 @@
 {
   "name": "react-sendler",
   "version": "0.1.0",
-  "proxy": "http://localhost:3000",
   "private": true,
   "homepage": "https://maxim-slvv.github.io/react-sendler/",
   "dependencies": {

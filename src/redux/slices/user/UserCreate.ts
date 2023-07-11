@@ -22,10 +22,10 @@ interface ServerData {
 }
 
 export const requestUserCreate = createAsyncThunk(
-  'pizzas/fetchPizzasStatus',
+  'user/fetchUserCreate',
   async (params: UserCreateParams) => {
     const { email, password, confirm_password, username, phone, field_of_activity } = params;
-    const { data } = await axios.post('api/user/create', {
+    const { data } = await axios.post('http://localhost:8000/api/v1/user/create', {
       email,
       password,
       confirm_password,
