@@ -3,12 +3,13 @@ import { AppDispatch } from '../../../redux/store';
 import { useDispatch } from 'react-redux';
 import { setAuthClose } from '../../../redux/slices/HomeAuthClick';
 import { UserCreateParams, requestUserCreate } from '../../../redux/slices/user/UserCreate';
-import { tokenParams, requestGetToken } from '../../../redux/slices/auth/AuthGetToken';
-
+// import {  requestGetToken } from '../../../redux/slices/auth/AuthGetToken';
+import { tokenParams } from '../../../api/auth/types';
 import { MainButton } from '../MainButton';
 
 import style from './AuthForm.module.scss';
 import closeBtn from '../../../assets/img/home/closeBtn.svg';
+import { loginUser } from '../../../redux/slices/auth/actionCreators';
 
 interface AuthFormProps {
   type: string;
@@ -20,19 +21,7 @@ export const AuthForm: React.FC<AuthFormProps> = (props) => {
   const authClickClose = () => {
     dispatch(setAuthClose());
   };
-  //В следующтий раз буду использовать Либы для валидации, просто нужно было для себя разобраться как там под капотом
-  //!-----------------------ФОРМА РЕГИСТРАЦИИ-----------------------*
-  let UserCreateFunc = () => {
-    dispatch(
-      requestUserCreate({
-        email: emailData,
-        password: passwordData,
-        confirm_password: password2Data,
-        username: nameData,
-        phone: numberData,
-      } as UserCreateParams),
-    );
-  };
+
   //?---------------Данные форм
   const [emailData, setEmailData] = React.useState('');
   const [nameData, setNameData] = React.useState('');
@@ -46,6 +35,7 @@ export const AuthForm: React.FC<AuthFormProps> = (props) => {
   const [passwordDirty, setPasswordDirty] = React.useState(false);
   const [password2Dirty, setPassword2Dirty] = React.useState(false);
   const [formValid, setFormValid] = React.useState(false);
+  const [formValid2, setFormValid2] = React.useState(false);
 
   //?---------------Параметры ошибки
   const [emailError, setEmailError] = React.useState(' ');
@@ -138,7 +128,19 @@ export const AuthForm: React.FC<AuthFormProps> = (props) => {
         break;
     }
   };
-
+  //В следующтий раз буду использовать Либы для валидации, просто нужно было для себя разобраться как там под капотом
+  //!-----------------------ФОРМА РЕГИСТРАЦИИ-----------------------*
+  let UserCreateFunc = () => {
+    dispatch(
+      requestUserCreate({
+        email: emailData,
+        password: passwordData,
+        confirm_password: password2Data,
+        username: nameData,
+        phone: numberData,
+      } as UserCreateParams),
+    );
+  };
   React.useEffect(() => {
     if (emailError || passwordError || password2Error) {
       setFormValid(false);
@@ -172,6 +174,7 @@ export const AuthForm: React.FC<AuthFormProps> = (props) => {
             <input
               onChange={(e) => nameHandler(e)}
               onBlur={(e) => blurHandler(e)}
+              value={nameData}
               name="name"
               type="text"
               placeholder="Имя пользователя (не обязательно)"
@@ -181,6 +184,7 @@ export const AuthForm: React.FC<AuthFormProps> = (props) => {
             <input
               onChange={(e) => numberHandler(e)}
               onBlur={(e) => blurHandler(e)}
+              value={numberData}
               name="number"
               type="number"
               placeholder="Номер телефона (не обязательно)"
@@ -227,17 +231,16 @@ export const AuthForm: React.FC<AuthFormProps> = (props) => {
   };
 
   //!-----------------------ФОРМА АВТОРИЗАЦИИ-----------------------*
+  //**-----------Новая функция авторизации
 
   let UserAuthFunc = () => {
     dispatch(
-      requestGetToken({
+      loginUser({
         username: nameData,
         password: passwordData,
       } as tokenParams),
     );
   };
-
-  const [formValid2, setFormValid2] = React.useState(false);
 
   React.useEffect(() => {
     if (nameError || passwordError) {
@@ -259,6 +262,7 @@ export const AuthForm: React.FC<AuthFormProps> = (props) => {
               onBlur={(e) => blurHandler(e)}
               name="name"
               type="text"
+              value={nameData}
               style={nameDirty && nameError ? { border: '1px solid red' } : {}}
               placeholder="Имя пользователя"
             />
