@@ -10,7 +10,6 @@ export type UserCreateParams = {
   confirm_password: string;
   username: string;
   phone: string;
-  field_of_activity?: string;
 };
 
 //TODO: проверить что может приходит с сервера
@@ -18,20 +17,18 @@ interface ServerData {
   email?: string;
   username?: string;
   phone?: string;
-  field_of_activity?: string;
 }
 
 export const requestUserCreate = createAsyncThunk(
-  'user/fetchUserCreate',
+  'user/userCreate',
   async (params: UserCreateParams) => {
-    const { email, password, confirm_password, username, phone, field_of_activity } = params;
+    const { email, password, confirm_password, username, phone } = params;
     const { data } = await axios.post('http://localhost:8000/api/v1/user/create', {
       email,
       password,
       confirm_password,
       username,
       phone,
-      field_of_activity,
     });
     return data as ServerData;
   },

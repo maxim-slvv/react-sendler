@@ -42,12 +42,14 @@ export const AuthForm: React.FC<AuthFormProps> = (props) => {
 
   //?---------------Состояния
   const [emailDirty, setEmailDirty] = React.useState(false);
+  const [nameDirty, setNameDirty] = React.useState(false);
   const [passwordDirty, setPasswordDirty] = React.useState(false);
   const [password2Dirty, setPassword2Dirty] = React.useState(false);
   const [formValid, setFormValid] = React.useState(false);
 
   //?---------------Параметры ошибки
   const [emailError, setEmailError] = React.useState(' ');
+  const [nameError, setNameError] = React.useState(' ');
   const [passwordError, setPasswordError] = React.useState(' ');
   const [password2Error, setPassword2Error] = React.useState(' ');
 
@@ -65,6 +67,14 @@ export const AuthForm: React.FC<AuthFormProps> = (props) => {
 
   const nameHandler = (e) => {
     setNameData(e.target.value);
+    if (e.target.value.length < 5 || e.target.value.length > 20) {
+      setNameError('Имя должно быть длинее 5 символов и не более 20');
+      if (!e.target.value) {
+        setNameError('Имя не может быть пустым');
+      }
+    } else {
+      setNameError('');
+    }
   };
   const numberHandler = (e) => {
     setNumberData(e.target.value);
@@ -106,6 +116,12 @@ export const AuthForm: React.FC<AuthFormProps> = (props) => {
         setEmailDirty(true);
         if (!emailData) {
           setEmailError('Email не может быть пустым');
+        }
+        break;
+      case 'name':
+        setNameDirty(true);
+        if (!nameData) {
+          setNameError('Имя не может быть пустым');
         }
         break;
       case 'password':
@@ -215,7 +231,7 @@ export const AuthForm: React.FC<AuthFormProps> = (props) => {
   let UserAuthFunc = () => {
     dispatch(
       requestGetToken({
-        email: emailData,
+        username: nameData,
         password: passwordData,
       } as tokenParams),
     );
@@ -224,7 +240,7 @@ export const AuthForm: React.FC<AuthFormProps> = (props) => {
   const [formValid2, setFormValid2] = React.useState(false);
 
   React.useEffect(() => {
-    if (emailError || passwordError) {
+    if (nameError || passwordError) {
       setFormValid2(false);
     } else {
       setFormValid2(true);
@@ -237,15 +253,14 @@ export const AuthForm: React.FC<AuthFormProps> = (props) => {
         <h3>Вход</h3>
         <div className={style.authForms}>
           <div className={style.inputWrapper}>
-            {emailDirty && emailError && <div className={style.errorMessage}>{emailError}</div>}
+            {nameDirty && nameError && <div className={style.errorMessage}>{nameError}</div>}
             <input
-              onChange={(e) => emailHandler(e)}
-              value={emailData}
+              onChange={(e) => nameHandler(e)}
               onBlur={(e) => blurHandler(e)}
-              name="email"
-              style={emailDirty && emailError ? { border: '1px solid red' } : {}}
-              type="email"
-              placeholder="Email"
+              name="name"
+              type="text"
+              style={nameDirty && nameError ? { border: '1px solid red' } : {}}
+              placeholder="Имя пользователя"
             />
           </div>
           <div className={style.inputWrapper}>
