@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { RootState } from '../redux/store';
 import { authState, setAuthOpen } from '../redux/slices/HomeAuthClick';
 
 import { HeaderButton } from '../components/Home/HeaderButton';
@@ -60,9 +60,9 @@ const Home = () => {
                 <Link to={'/'} className={style.logoImg}>
                   <img src={logo} alt="" />
                 </Link>
-                <Link className={style.navLink} style={{ paddingRight: '15px' }} to={'/dashboard'}>
+                {/* <Link className={style.navLink} style={{ paddingRight: '15px' }} to={'/dashboard'}>
                   <HeaderButton color="green" text="войти как ADMIN" />
-                </Link>
+                </Link> */}
                 <button
                   style={{ border: '0px', backgroundColor: 'inherit' }}
                   onClick={() => authClickOpen()}>

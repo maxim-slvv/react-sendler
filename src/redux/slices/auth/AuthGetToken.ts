@@ -1,29 +1,32 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { ServerData } from '../../../api/auth/types';
 
 export interface AuthState {
   authData: {
     accessToken: string | null;
+    refreshToken: string | null;
     isLoading: boolean;
     error: string | null;
   };
-  profileData: {
-    profile: string | null;
-    isLoading: boolean;
-    error: string | null;
-  };
+  // profileData: {
+  //   profile: string | null;
+  //   isLoading: boolean;
+  //   error: string | null;
+  // };
 }
 
 const initialState: AuthState = {
   authData: {
     accessToken: null,
+    refreshToken: null,
     isLoading: false,
     error: null,
   },
-  profileData: {
-    profile: null,
-    isLoading: false,
-    error: null,
-  },
+  // profileData: {
+  //   profile: null,
+  //   isLoading: false,
+  //   error: null,
+  // },
 };
 
 export const AuthGetToken = createSlice({
@@ -37,11 +40,12 @@ export const AuthGetToken = createSlice({
         isLoading: true,
       },
     }),
-    loginSucess: (state, action: PayloadAction<string>): AuthState => ({
+    loginSuccess: (state, action: PayloadAction<ServerData>): AuthState => ({
       ...state,
       authData: {
         ...state.authData,
-        accessToken: action.payload,
+        accessToken: action.payload.access,
+        refreshToken: action.payload.refresh,
         isLoading: false,
         error: null,
       },
@@ -87,7 +91,7 @@ export const {
   // loadProfileSucess,
   // loadProfileFailure,
   loginStart,
-  loginSucess,
+  loginSuccess,
   loginFailure,
   // logoutSuccess,
 } = AuthGetToken.actions;

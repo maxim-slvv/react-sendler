@@ -3,7 +3,7 @@ import api from '../../../api/index';
 import { tokenParams, ServerData } from '../../../api/auth/types';
 import {
   loginStart,
-  loginSucess,
+  loginSuccess,
   loginFailure,
   // logoutSuccess,loadProfileStart, loadProfileFailure, loadProfileSucess
 } from './AuthGetToken';
@@ -12,15 +12,16 @@ import {
 // import { AxiosPromise } from "axios"
 // import { isTokenExpired } from "../../utils/jwt"
 
+//!здесь данные для авторизации начинаю обрабатывать
 export const loginUser =
   (data: tokenParams) =>
   async (dispatch: Dispatch<any>): Promise<void> => {
     try {
       dispatch(loginStart());
 
-      const res = await api.auth.AuthGetToken(data);
+      const res = await api.auth.AuthLogin(data);
 
-      dispatch(loginSucess(res.data.access));
+      dispatch(loginSuccess(res.data));
       // dispatch(getProfile())
     } catch (e: any) {
       console.error(e);

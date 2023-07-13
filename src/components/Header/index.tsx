@@ -138,7 +138,7 @@ export const Header = () => {
               )}
             </div>
             <div className={style.logo}>
-              <Link to={'/'}>
+              <Link to={'/dashboard'}>
                 <img className={style.logoImg} src={logo} alt="" />
               </Link>
             </div>
